@@ -21,6 +21,10 @@
 		85747FA919E09C7D0002C24B /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 85747FA819E09C7D0002C24B /* plane.png */; };
 		85747FAD19E0A27A0002C24B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747FAC19E0A27A0002C24B /* CoreMotion.framework */; };
 		8577291F19E0A99D00D80562 /* california.png in Resources */ = {isa = PBXBuildFile; fileRef = 8577291E19E0A99D00D80562 /* california.png */; };
+		8577292219E0BCA700D80562 /* APPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8577292119E0BCA700D80562 /* APPlane.m */; };
+		8577292519E0BCBD00D80562 /* APHeroPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8577292419E0BCBD00D80562 /* APHeroPlane.m */; };
+		8577292819E0BCD700D80562 /* APEnemySuicidePlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8577292719E0BCD700D80562 /* APEnemySuicidePlane.m */; };
+		8577292B19E0BCE300D80562 /* APEnemyShooterPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8577292A19E0BCE300D80562 /* APEnemyShooterPlane.m */; };
 		85D4867F19E08E1C00CC3D66 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4867E19E08E1C00CC3D66 /* Default.png */; };
 		85D4868119E08E1C00CC3D66 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4868019E08E1C00CC3D66 /* Default@2x.png */; };
 		85D4868319E08E1C00CC3D66 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4868219E08E1C00CC3D66 /* Default-568h@2x.png */; };
@@ -225,6 +229,14 @@
 		85747FA819E09C7D0002C24B /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = Resources/plane.png; sourceTree = "<group>"; };
 		85747FAC19E0A27A0002C24B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8577291E19E0A99D00D80562 /* california.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = california.png; path = Resources/california.png; sourceTree = "<group>"; };
+		8577292019E0BCA700D80562 /* APPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APPlane.h; path = Classes/APPlane.h; sourceTree = "<group>"; };
+		8577292119E0BCA700D80562 /* APPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPlane.m; path = Classes/APPlane.m; sourceTree = "<group>"; };
+		8577292319E0BCBD00D80562 /* APHeroPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHeroPlane.h; sourceTree = "<group>"; };
+		8577292419E0BCBD00D80562 /* APHeroPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHeroPlane.m; sourceTree = "<group>"; };
+		8577292619E0BCD700D80562 /* APEnemySuicidePlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEnemySuicidePlane.h; sourceTree = "<group>"; };
+		8577292719E0BCD700D80562 /* APEnemySuicidePlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APEnemySuicidePlane.m; sourceTree = "<group>"; };
+		8577292919E0BCE300D80562 /* APEnemyShooterPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEnemyShooterPlane.h; sourceTree = "<group>"; };
+		8577292A19E0BCE300D80562 /* APEnemyShooterPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APEnemyShooterPlane.m; sourceTree = "<group>"; };
 		85D4867719E08E1C00CC3D66 /* FighterPlanes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FighterPlanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D4867B19E08E1C00CC3D66 /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveChipmunk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D4867E19E08E1C00CC3D66 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
@@ -640,6 +652,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8577292C19E0BCEA00D80562 /* Planes */ = {
+			isa = PBXGroup;
+			children = (
+				8577292019E0BCA700D80562 /* APPlane.h */,
+				8577292119E0BCA700D80562 /* APPlane.m */,
+				8577292319E0BCBD00D80562 /* APHeroPlane.h */,
+				8577292419E0BCBD00D80562 /* APHeroPlane.m */,
+				8577292D19E0BCF900D80562 /* Enemies */,
+			);
+			name = Planes;
+			sourceTree = "<group>";
+		};
+		8577292D19E0BCF900D80562 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				8577292619E0BCD700D80562 /* APEnemySuicidePlane.h */,
+				8577292719E0BCD700D80562 /* APEnemySuicidePlane.m */,
+				8577292919E0BCE300D80562 /* APEnemyShooterPlane.h */,
+				8577292A19E0BCE300D80562 /* APEnemyShooterPlane.m */,
+			);
+			name = Enemies;
+			sourceTree = "<group>";
+		};
 		85D4866E19E08E1C00CC3D66 = {
 			isa = PBXGroup;
 			children = (
@@ -1420,6 +1455,7 @@
 				85D488E319E08E1E00CC3D66 /* IntroScene.m */,
 				85747FA519E098EE0002C24B /* GameScene.h */,
 				85747FA619E098EE0002C24B /* GameScene.m */,
+				8577292C19E0BCEA00D80562 /* Planes */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1635,6 +1671,7 @@
 				85D4881019E08E1D00CC3D66 /* ALSource.m in Sources */,
 				85D4883319E08E1D00CC3D66 /* OALTools.m in Sources */,
 				85D4878E19E08E1D00CC3D66 /* cocos2d.m in Sources */,
+				8577292819E0BCD700D80562 /* APEnemySuicidePlane.m in Sources */,
 				85D4876619E08E1D00CC3D66 /* CCSprite9Slice.m in Sources */,
 				85D487A619E08E1D00CC3D66 /* CCDirectorMac.m in Sources */,
 				85D4883C19E08E1D00CC3D66 /* CCControl.m in Sources */,
@@ -1657,10 +1694,12 @@
 				85D4876C19E08E1D00CC3D66 /* CCSpriteFrame.m in Sources */,
 				85D4879819E08E1D00CC3D66 /* CCES2Renderer.m in Sources */,
 				85D486ED19E08E1C00CC3D66 /* CCActionProgressTimer.m in Sources */,
+				8577292B19E0BCE300D80562 /* APEnemyShooterPlane.m in Sources */,
 				85D487D019E08E1D00CC3D66 /* TGAlib.m in Sources */,
 				85D486E319E08E1C00CC3D66 /* CCActionInstant.m in Sources */,
 				85D486E619E08E1C00CC3D66 /* CCActionInterval.m in Sources */,
 				85D4871419E08E1C00CC3D66 /* CCNodeColor.m in Sources */,
+				8577292519E0BCBD00D80562 /* APHeroPlane.m in Sources */,
 				85D487A219E08E1D00CC3D66 /* CCAppDelegate.m in Sources */,
 				85D4870219E08E1C00CC3D66 /* CCDirector.m in Sources */,
 				85D486E019E08E1C00CC3D66 /* CCActionEase.m in Sources */,
@@ -1673,6 +1712,7 @@
 				85D486C919E08E1C00CC3D66 /* CCEffectTexture.m in Sources */,
 				85D487B819E08E1D00CC3D66 /* CCColor.m in Sources */,
 				85D486D219E08E1C00CC3D66 /* CCShader.m in Sources */,
+				8577292219E0BCA700D80562 /* APPlane.m in Sources */,
 				85D486F419E08E1C00CC3D66 /* CCAnimation.m in Sources */,
 				85D4884019E08E1E00CC3D66 /* CCControlTextureFactory.m in Sources */,
 				85D487E419E08E1D00CC3D66 /* OALAudioActions.m in Sources */,
