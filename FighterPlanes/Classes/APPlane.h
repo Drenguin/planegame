@@ -10,7 +10,9 @@
 #import "cocos2d.h"
 
 @interface APPlane : CCSprite {
-    
+    float _speed;
 }
+
+@property (nonatomic, assign) int health;
 
 @end
