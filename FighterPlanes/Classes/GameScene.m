@@ -25,9 +25,18 @@
     self = [super init];
     if (!self) return(nil);
     
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    
     // Create a colored background (Dark Grey)
-    CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]];
+    CCSprite *background = [CCSprite spriteWithImageNamed:@"California.png"];
+    
+    CCSprite *planeSprite = [CCSprite spriteWithImageNamed:@"plane.png"];
+    planeSprite.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
+    planeSprite.scale = 2.0f;
+    [planeSprite.texture setAntialiased:NO];
+    
     [self addChild:background];
+    [self addChild:planeSprite];
     
     // done
     return self;
