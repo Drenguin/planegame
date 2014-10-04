@@ -17,6 +17,7 @@
 		85747FA119E093F70002C24B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747FA019E093F70002C24B /* GLKit.framework */; };
 		85747FA219E093FF0002C24B /* libObjectiveChipmunk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D4867B19E08E1C00CC3D66 /* libObjectiveChipmunk.a */; };
 		85747FA419E0956E0002C24B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747FA319E0956E0002C24B /* UIKit.framework */; };
+		85747FA719E098EE0002C24B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85747FA619E098EE0002C24B /* GameScene.m */; };
 		85D4867F19E08E1C00CC3D66 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4867E19E08E1C00CC3D66 /* Default.png */; };
 		85D4868119E08E1C00CC3D66 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4868019E08E1C00CC3D66 /* Default@2x.png */; };
 		85D4868319E08E1C00CC3D66 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D4868219E08E1C00CC3D66 /* Default-568h@2x.png */; };
@@ -199,7 +200,6 @@
 		85D488D619E08E1E00CC3D66 /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85D488D519E08E1E00CC3D66 /* LICENSE_Chipmunk.txt */; };
 		85D488DA19E08E1E00CC3D66 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488D919E08E1E00CC3D66 /* main.m */; };
 		85D488DE19E08E1E00CC3D66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488DD19E08E1E00CC3D66 /* AppDelegate.m */; };
-		85D488E119E08E1E00CC3D66 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488E019E08E1E00CC3D66 /* HelloWorldScene.m */; };
 		85D488E419E08E1E00CC3D66 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488E319E08E1E00CC3D66 /* IntroScene.m */; };
 		85D488EE19E092A900CC3D66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D488ED19E092A900CC3D66 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
@@ -214,6 +214,8 @@
 		85747F9E19E093F30002C24B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		85747FA019E093F70002C24B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		85747FA319E0956E0002C24B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		85747FA519E098EE0002C24B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		85747FA619E098EE0002C24B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
 		85D4867719E08E1C00CC3D66 /* FighterPlanes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FighterPlanes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D4867B19E08E1C00CC3D66 /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libObjectiveChipmunk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D4867E19E08E1C00CC3D66 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
@@ -598,8 +600,6 @@
 		85D488D919E08E1E00CC3D66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		85D488DC19E08E1E00CC3D66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		85D488DD19E08E1E00CC3D66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		85D488DF19E08E1E00CC3D66 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		85D488E019E08E1E00CC3D66 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		85D488E219E08E1E00CC3D66 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		85D488E319E08E1E00CC3D66 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		85D488ED19E092A900CC3D66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1398,10 +1398,10 @@
 			children = (
 				85D488DC19E08E1E00CC3D66 /* AppDelegate.h */,
 				85D488DD19E08E1E00CC3D66 /* AppDelegate.m */,
-				85D488DF19E08E1E00CC3D66 /* HelloWorldScene.h */,
-				85D488E019E08E1E00CC3D66 /* HelloWorldScene.m */,
 				85D488E219E08E1E00CC3D66 /* IntroScene.h */,
 				85D488E319E08E1E00CC3D66 /* IntroScene.m */,
+				85747FA519E098EE0002C24B /* GameScene.h */,
+				85747FA619E098EE0002C24B /* GameScene.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1552,7 +1552,6 @@
 				85D486B719E08E1C00CC3D66 /* CCEffect.m in Sources */,
 				85D4885519E08E1E00CC3D66 /* CCBAnimationManager.m in Sources */,
 				85D487C319E08E1D00CC3D66 /* CCVertex.m in Sources */,
-				85D488E119E08E1E00CC3D66 /* HelloWorldScene.m in Sources */,
 				85D486F719E08E1C00CC3D66 /* CCAnimationCache.m in Sources */,
 				85D487B119E08E1D00CC3D66 /* base64.c in Sources */,
 				85D4873A19E08E1D00CC3D66 /* CCParticleSystemBase.m in Sources */,
@@ -1592,6 +1591,7 @@
 				85D487E119E08E1D00CC3D66 /* OALActionManager.m in Sources */,
 				85D4874519E08E1D00CC3D66 /* CCPhysicsNode.m in Sources */,
 				85D487E719E08E1D00CC3D66 /* OALUtilityActions.m in Sources */,
+				85747FA719E098EE0002C24B /* GameScene.m in Sources */,
 				85D4871F19E08E1C00CC3D66 /* CCMotionStreak.m in Sources */,
 				85D4882919E08E1D00CC3D66 /* NSMutableArray+WeakReferences.m in Sources */,
 				85D4881719E08E1D00CC3D66 /* OpenALManager.m in Sources */,
