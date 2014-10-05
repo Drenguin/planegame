@@ -20,5 +20,6 @@
 @property (nonatomic, assign) float health;
 
 - (void)update:(CCTime)delta;
+- (float)getSpeed;
 
 @end
