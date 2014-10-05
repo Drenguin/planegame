@@ -10,6 +10,7 @@
 
 
 @implementation APWeapon
+@synthesize velocity;
 
 - (float)getDamage {
     return _damage;

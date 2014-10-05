@@ -13,13 +13,12 @@
     float _damage;
     float _speed;
     float _reloadRate;
-    
-    CGPoint velocity;
 }
+
+@property (nonatomic, assign) CGPoint velocity;
 
 - (float)getDamage;
 - (float)getSpeed;
 - (float)getReloadRate;
-- (CGPoint)getVelocity;
 
 @end
