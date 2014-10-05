@@ -100,7 +100,7 @@ float newEnemyReloadTime;
         }
         
         if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
-            [self setPaused:YES];
+            //[self setPaused:YES];
             [self.gameHudScene gameOver];
         }
     }
@@ -173,6 +173,7 @@ float newEnemyReloadTime;
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
     APEnemySuicidePlane *enemyPlane = [[APEnemySuicidePlane alloc] init];
+    enemyPlane.heroSprite = _planeSprite;
     enemyPlane.rotation = (arc4random()%365);
     
     float x = (arc4random()%((int)_background.boundingBox.size.width));
