@@ -7,6 +7,7 @@
 //
 
 #import "APEnemySuicidePlane.h"
+#import "math.h"
 
 
 @implementation APEnemySuicidePlane
@@ -23,14 +24,17 @@
     return self;
 }
 
-- (float) setDirection {
+- (void)update:(CCTime)delta {
     float deltx = self.heroSprite.position.x - self.position.x;
     float delty = self.heroSprite.position.y - self.position.y;
+    float angle = atan(delty/deltx);
+    if (deltx < 0) {
+        angle = angle * -1;
+    }
+    angle = -1*angle + M_PI/2;
+    self.rotation = CC_RADIANS_TO_DEGREES(angle);
     
-    return 0.0;
-}
-
-- (void)update:(CCTime)delta {
+    
     self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
 }
 
