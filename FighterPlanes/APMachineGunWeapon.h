@@ -1,5 +1,5 @@
 //
-//  APPlane.h
+//  APMachineGunWeapon.h
 //  FighterPlanes
 //
 //  Created by Patrick Mc Gartoll on 10/4/14.
@@ -8,13 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "APWeapon.h"
 
-@interface APPlane : CCSprite {
-    float _speed;
+@interface APMachineGunWeapon : APWeapon {
+    
 }
-
-@property (nonatomic, assign) int health;
-
-- (void)update:(CCTime)delta;
 
 @end

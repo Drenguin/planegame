@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		850DC75019E0BFA3002A9244 /* APPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 850DC74F19E0BFA3002A9244 /* APPlane.m */; };
+		850DC75319E0C1A6002A9244 /* APWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850DC75219E0C1A6002A9244 /* APWeapon.m */; };
+		850DC75619E0C1F1002A9244 /* APMachineGunWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850DC75519E0C1F1002A9244 /* APMachineGunWeapon.m */; };
+		850DC75919E0C204002A9244 /* APMissileWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850DC75819E0C204002A9244 /* APMissileWeapon.m */; };
 		85747F9319E093CA0002C24B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747F9219E093CA0002C24B /* AVFoundation.framework */; };
 		85747F9519E093D20002C24B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747F9419E093D20002C24B /* OpenAL.framework */; };
 		85747F9719E093D70002C24B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85747F9619E093D70002C24B /* QuartzCore.framework */; };
@@ -216,6 +219,12 @@
 
 /* Begin PBXFileReference section */
 		850DC74F19E0BFA3002A9244 /* APPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPlane.m; sourceTree = "<group>"; };
+		850DC75119E0C1A6002A9244 /* APWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APWeapon.h; sourceTree = "<group>"; };
+		850DC75219E0C1A6002A9244 /* APWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APWeapon.m; sourceTree = "<group>"; };
+		850DC75419E0C1F1002A9244 /* APMachineGunWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMachineGunWeapon.h; sourceTree = "<group>"; };
+		850DC75519E0C1F1002A9244 /* APMachineGunWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMachineGunWeapon.m; sourceTree = "<group>"; };
+		850DC75719E0C204002A9244 /* APMissileWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMissileWeapon.h; sourceTree = "<group>"; };
+		850DC75819E0C204002A9244 /* APMissileWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMissileWeapon.m; sourceTree = "<group>"; };
 		85747F9219E093CA0002C24B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		85747F9419E093D20002C24B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		85747F9619E093D70002C24B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -652,6 +661,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850DC75A19E0C211002A9244 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				850DC75119E0C1A6002A9244 /* APWeapon.h */,
+				850DC75219E0C1A6002A9244 /* APWeapon.m */,
+				850DC75419E0C1F1002A9244 /* APMachineGunWeapon.h */,
+				850DC75519E0C1F1002A9244 /* APMachineGunWeapon.m */,
+				850DC75719E0C204002A9244 /* APMissileWeapon.h */,
+				850DC75819E0C204002A9244 /* APMissileWeapon.m */,
+			);
+			name = Weapons;
+			sourceTree = "<group>";
+		};
 		8577292C19E0BCEA00D80562 /* Planes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1455,6 +1477,7 @@
 				85D488E319E08E1E00CC3D66 /* IntroScene.m */,
 				85747FA519E098EE0002C24B /* GameScene.h */,
 				85747FA619E098EE0002C24B /* GameScene.m */,
+				850DC75A19E0C211002A9244 /* Weapons */,
 				8577292C19E0BCEA00D80562 /* Planes */,
 			);
 			name = Classes;
@@ -1596,6 +1619,7 @@
 				85D4885B19E08E1E00CC3D66 /* CCBReader.m in Sources */,
 				85D487FA19E08E1D00CC3D66 /* ALBuffer.m in Sources */,
 				85D4880019E08E1D00CC3D66 /* ALChannelSource.m in Sources */,
+				850DC75319E0C1A6002A9244 /* APWeapon.m in Sources */,
 				85D4882319E08E1D00CC3D66 /* IOSVersion.m in Sources */,
 				85D4880919E08E1D00CC3D66 /* ALListener.m in Sources */,
 				85D487A919E08E1D00CC3D66 /* CCGLView.m in Sources */,
@@ -1666,6 +1690,7 @@
 				85D486BB19E08E1C00CC3D66 /* CCEffectContrast.m in Sources */,
 				85D4884619E08E1E00CC3D66 /* CCSlider.m in Sources */,
 				85D486C319E08E1C00CC3D66 /* CCEffectPixellate.m in Sources */,
+				850DC75919E0C204002A9244 /* APMissileWeapon.m in Sources */,
 				85D4886119E08E1E00CC3D66 /* CCBSequenceProperty.m in Sources */,
 				85D4871119E08E1C00CC3D66 /* CCLabelTTF.m in Sources */,
 				85D4881019E08E1D00CC3D66 /* ALSource.m in Sources */,
@@ -1694,6 +1719,7 @@
 				85D4876C19E08E1D00CC3D66 /* CCSpriteFrame.m in Sources */,
 				85D4879819E08E1D00CC3D66 /* CCES2Renderer.m in Sources */,
 				85D486ED19E08E1C00CC3D66 /* CCActionProgressTimer.m in Sources */,
+				850DC75619E0C1F1002A9244 /* APMachineGunWeapon.m in Sources */,
 				8577292B19E0BCE300D80562 /* APEnemyShooterPlane.m in Sources */,
 				85D487D019E08E1D00CC3D66 /* TGAlib.m in Sources */,
 				85D486E319E08E1C00CC3D66 /* CCActionInstant.m in Sources */,
