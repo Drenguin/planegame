@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import <CoreMotion/CoreMotion.h>
+#import "APHeroPlane.h"
 
 
 @implementation GameScene {
@@ -42,7 +43,7 @@ float rotationSpeed = 10.0f;
     background.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
     background.scale = 0.5f;
     
-    _planeSprite = [CCSprite spriteWithImageNamed:@"plane.png"];
+    _planeSprite = [[APHeroPlane alloc] init];
     _planeSprite.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
     _planeSprite.scale = 1.0f;
     [_planeSprite.texture setAntialiased:NO];
@@ -61,9 +62,14 @@ float rotationSpeed = 10.0f;
     CMAcceleration acceleration = accelerometerData.acceleration;
     
     _planeSprite.rotation += acceleration.y*delta*rotationSpeed*60.0f;
-    //_planeSprite.position = ccp(_planeSprite.position.x+planeSpeed*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + planeSpeed*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
+    _planeSprite.position = ccp(_planeSprite.position.x+planeSpeed*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + planeSpeed*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
     
-    //float newRotOffset = -1*acceleration.y*delta*60.0f;
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    CGPoint centerOfView = ccp(screenSize.width/2, screenSize.height/2);
+    CGPoint viewPoint = ccpSub(centerOfView, _planeSprite.position);
+    self.position = viewPoint;
+    
+    /*//float newRotOffset = -1*acceleration.y*delta*60.0f;
     float newXOffset = -1*planeSpeed*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation));
     float newYOffset = -1*planeSpeed*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation));
     
@@ -73,7 +79,7 @@ float rotationSpeed = 10.0f;
         //s.anchorPoint = ccp(s.anchorPoint.x-(newXOffset/s.boundingBox.size.width), s.anchorPoint.y-(newYOffset/s.boundingBox.size.height));
         //NSLog(@"%f, %f",s.anchorPoint.x, s.anchorPoint.y);
         //s.rotation = s.rotation + newRotOffset;
-    }
+    }*/
 }
 
 - (void)onEnter {
