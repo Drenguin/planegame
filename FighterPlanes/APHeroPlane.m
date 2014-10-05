@@ -16,7 +16,7 @@
 
 - (id)init {
     // Apple recommend assigning self with supers return value
-    self = [super initWithImageNamed:@"heroPlane.png"];
+    self = [super initWithImageNamed:@"heroPlane2.png"];
     if (!self) return(nil);
     
     self.health = 5;

@@ -17,7 +17,7 @@
     if (!self) return(nil);
     
     
-    self.scale = .1;
+    self.scale = .05;
     _damage = 5.0f;
     _speed = 5.0f;
     _reloadRate = 3.0f;
