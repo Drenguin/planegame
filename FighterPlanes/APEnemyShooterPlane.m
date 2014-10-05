@@ -18,7 +18,7 @@
     
     self.scale = .25f;
     self.health = 3;
-    _speed = .75f;
+    _speed = 1.5f;
     
     return self;
 }

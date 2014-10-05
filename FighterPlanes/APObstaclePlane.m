@@ -1,24 +1,24 @@
 //
-//  APEnemySuicidePlane.m
+//  APObstaclePlane.m
 //  FighterPlanes
 //
-//  Created by Patrick Mc Gartoll on 10/4/14.
+//  Created by Andrew Reardon on 10/4/14.
 //  Copyright 2014 Drenguin. All rights reserved.
 //
 
-#import "APEnemySuicidePlane.h"
+#import "APObstaclePlane.h"
 
 
-@implementation APEnemySuicidePlane
+@implementation APObstaclePlane
 
 - (id)init {
     // Apple recommend assigning self with supers return value
-    self = [super initWithImageNamed:@"suicidePlane.png"];
+    self = [super initWithImageNamed:@"obstaclePlane.png"];
     if (!self) return(nil);
     
-    self.scale = .5f;
+    self.scale = .25f;
     self.health = 1;
-    _speed = 2.0f;
+    _speed = 1.0f;
     
     return self;
 }
