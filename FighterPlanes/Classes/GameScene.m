@@ -72,7 +72,9 @@ float rotationSpeed = 10.0f;
     self.position = viewPoint;
     
     for (CCSprite *s in _sprites) {
-        [s update:delta];
+        if ([s isKindOfClass:[APWeapon class]]) {
+            [s update:delta];
+        }
     }
     
     /*//float newRotOffset = -1*acceleration.y*delta*60.0f;
@@ -91,7 +93,9 @@ float rotationSpeed = 10.0f;
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // we want to know the location of our touch in this scene
-    CGPoint touchLocation = [touch locationInNode:self];
+    CGPoint touchLocation = [touch locationInView:[touch view]];
+    touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
+    
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     if (touchLocation.x > screenSize.width/2.0f) {
