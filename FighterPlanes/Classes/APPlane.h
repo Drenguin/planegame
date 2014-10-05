@@ -12,6 +12,7 @@
 
 @interface APPlane : CCSprite {
     float _speed;
+    float _damageOnCollision;
 }
 
 @property (nonatomic, assign) float health;

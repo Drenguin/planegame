@@ -14,4 +14,6 @@
     
 }
 
+@property (nonatomic, retain) CCSprite *heroSprite;
+
 @end

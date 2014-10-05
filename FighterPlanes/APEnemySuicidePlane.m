@@ -20,6 +20,7 @@
     self.scale = .25f;
     self.health = 1;
     _speed = 2.0f;
+    _damageOnCollision = 1.0f;
     
     return self;
 }
@@ -32,7 +33,8 @@
         angle = angle + M_PI;
     }
     angle = -1*angle + M_PI/2;
-    self.rotation = CC_RADIANS_TO_DEGREES(angle);
+    float average = (self.rotation + angle)/2;
+    self.rotation = CC_RADIANS_TO_DEGREES(average);
     
     
     self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
