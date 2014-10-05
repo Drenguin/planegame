@@ -19,6 +19,9 @@
 
 float rotationSpeed = 10.0f;
 
+float newEnemyTimer;
+float newEnemyReloadTime;
+
 
 + (GameScene *)scene {
     return [[self alloc] init];
@@ -42,7 +45,11 @@ float rotationSpeed = 10.0f;
     background.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
     background.scale = 0.5f;
     
+    newEnemyReloadTime = 2.0f;
+    newEnemyTimer = newEnemyReloadTime;
+    
     _planeSprite = [[APHeroPlane alloc] init];
+    _planeSprite.parentScene = self;
     _planeSprite.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
     _planeSprite.scale = 1.0f;
     [_planeSprite.texture setAntialiased:NO];
@@ -69,12 +76,19 @@ float rotationSpeed = 10.0f;
     self.position = viewPoint;
     
     // To get this working we need to change self.position by the sin and cos of _planeSprite.rotation
-    //self.rotation = -1*_planeSprite.rotation;
+//    self.rotation = _planeSprite.rotation;
     
+    [_planeSprite update:delta];
     for (CCSprite *s in _sprites) {
         if ([s isKindOfClass:[APWeapon class]]) {
             [s update:delta];
         }
+    }
+    
+    newEnemyTimer -= delta;
+    if (newEnemyTimer <= 0) {
+        newEnemyTimer = newEnemyReloadTime;
+        [self createEnemy];
     }
     
     /*//float newRotOffset = -1*acceleration.y*delta*60.0f;
@@ -90,10 +104,21 @@ float rotationSpeed = 10.0f;
     }*/
 }
 
-- (void)heroShoot:(int)weaponType {
-    APWeapon *w = [_planeSprite shoot:weaponType];
-    [self addChild:w z:0];
-    [_sprites addObject:w];
+- (void)createEnemy {
+    
+}
+
+- (void)heroStartShoot:(int)weaponType {
+    [_planeSprite startShooting:weaponType];
+}
+
+- (void)heroStopShoot:(int)weaponType {
+    [_planeSprite stopShooting:weaponType];
+}
+
+- (void)addSprite:(CCSprite *)s {
+    [_sprites addObject:s];
+    [self addChild:s];
 }
 
 - (void)onEnter {

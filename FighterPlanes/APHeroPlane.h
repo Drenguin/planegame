@@ -10,11 +10,15 @@
 #import "cocos2d.h"
 #import "APPlane.h"
 #import "APWeapon.h"
+#import "GameScene.h"
 
 @interface APHeroPlane : APPlane {
     
 }
 
-- (APWeapon *)shoot:(int)weaponType;
+@property (nonatomic, retain) GameScene *parentScene;
+
+- (void)startShooting:(int)weaponType;
+- (void)stopShooting:(int)weaponType;
 
 @end

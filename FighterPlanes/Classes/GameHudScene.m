@@ -37,17 +37,29 @@
     return self;
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     // we want to know the location of our touch in this scene
     CGPoint touchLocation = [touch locationInView:[touch view]];
     touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     if (touchLocation.x > screenSize.width/2.0f) {
-        [_gameScene heroShoot:MACHINE_GUN];
+        [_gameScene heroStartShoot:MACHINE_GUN];
     } else {
-        [_gameScene heroShoot:MISSILE];
+        [_gameScene heroStartShoot:MISSILE];
+    }
+}
+
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    // we want to know the location of our touch in this scene
+    CGPoint touchLocation = [touch locationInView:[touch view]];
+    touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
+    
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    if (touchLocation.x > screenSize.width/2.0f) {
+        [_gameScene heroStopShoot:MACHINE_GUN];
+    } else {
+        [_gameScene heroStopShoot:MISSILE];
     }
 }
 

@@ -16,6 +16,8 @@
 + (GameScene *)scene;
 - (id)init;
 
-- (void)heroShoot:(int)weaponType;
+- (void)heroStartShoot:(int)weaponType;
+- (void)heroStopShoot:(int)weaponType;
+- (void)addSprite:(CCSprite *)s;
 
 @end
