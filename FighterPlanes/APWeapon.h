@@ -19,6 +19,6 @@
 - (float)getSpeed;
 - (float)getReloadRate;
 
-- (void)update:(CCTime)delta;
+- (void)tick:(CCTime)delta;
 
 @end

@@ -35,7 +35,7 @@ NSMutableDictionary *weaponsToShoot;
     return self;
 }
 
-- (void)update:(CCTime)delta {
+- (void)tick:(CCTime)delta {
     machineGunTimeToWaitForReload -= delta;
     missileTimeToWaitForReload -= delta;
     

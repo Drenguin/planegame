@@ -100,7 +100,7 @@ float newEnemyReloadTime;
         }
         
         if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
-            //[self setPaused:YES];
+            [self setPaused:YES];
             [self.gameHudScene gameOver];
         }
     }
@@ -172,8 +172,16 @@ float newEnemyReloadTime;
 - (void)createEnemy {
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
-    APEnemySuicidePlane *enemyPlane = [[APEnemySuicidePlane alloc] init];
-    enemyPlane.heroSprite = _planeSprite;
+    APPlane *enemyPlane;
+    
+    int planeType = arc4random()%2;
+    if (planeType == 0) {
+        enemyPlane = [[APEnemySuicidePlane alloc] init];
+        ((APEnemySuicidePlane *)enemyPlane).heroSprite = _planeSprite;
+    } else if (planeType == 1) {
+        enemyPlane = [[APObstaclePlane alloc] init];
+    }
+    
     enemyPlane.rotation = (arc4random()%365);
     
     float x = (arc4random()%((int)_background.boundingBox.size.width));
