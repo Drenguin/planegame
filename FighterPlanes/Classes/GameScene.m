@@ -89,12 +89,12 @@ float newEnemyReloadTime;
     //self.rotation = _planeSprite.rotation;
     //self.position = ccp(self.position.x + screenSize.width*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y + screenSize.width*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
     
-    [_planeSprite update:delta];
+    [_planeSprite tick:delta];
     
     NSMutableArray *enemyPlanesToRemove = [[NSMutableArray alloc] init];
     
-    for (CCSprite *p in _enemyPlanes) {
-        [p update:delta];
+    for (APPlane *p in _enemyPlanes) {
+        [p tick:delta];
         if (!CGRectIntersectsRect([p boundingBox], [_background boundingBox])) {
             [enemyPlanesToRemove addObject:p];
         }
@@ -112,7 +112,7 @@ float newEnemyReloadTime;
     NSMutableArray *weaponsToRemove = [[NSMutableArray alloc] init];
     
     for (APWeapon *w in _heroWeapons) {
-        [w update:delta];
+        [w tick:delta];
         if (!CGRectIntersectsRect([w boundingBox], [_background boundingBox])) {
             [weaponsToRemove addObject:w];
         }
@@ -172,7 +172,16 @@ float newEnemyReloadTime;
 - (void)createEnemy {
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
-    APEnemySuicidePlane *enemyPlane = [[APEnemySuicidePlane alloc] init];
+    APPlane *enemyPlane;
+    
+    int planeType = arc4random()%2;
+    if (planeType == 0) {
+        enemyPlane = [[APEnemySuicidePlane alloc] init];
+        ((APEnemySuicidePlane *)enemyPlane).heroSprite = _planeSprite;
+    } else if (planeType == 1) {
+        enemyPlane = [[APObstaclePlane alloc] init];
+    }
+    
     enemyPlane.rotation = (arc4random()%365);
     
     float x = (arc4random()%((int)_background.boundingBox.size.width));

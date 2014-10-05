@@ -14,4 +14,6 @@
     
 }
 
+- (void)tick:(CCTime)delta;
+
 @end

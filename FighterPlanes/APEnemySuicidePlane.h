@@ -16,4 +16,6 @@
 
 @property (nonatomic, retain) CCSprite *heroSprite;
 
+- (void)tick:(CCTime)delta;
+
 @end

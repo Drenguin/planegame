@@ -64,4 +64,8 @@
     }
 }
 
+- (void)gameOver {
+    
+}
+
 @end

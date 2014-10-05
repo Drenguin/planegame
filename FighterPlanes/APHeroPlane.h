@@ -21,4 +21,6 @@
 - (void)startShooting:(int)weaponType;
 - (void)stopShooting:(int)weaponType;
 
+- (void)tick:(CCTime)delta;
+
 @end
