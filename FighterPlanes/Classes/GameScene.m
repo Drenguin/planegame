@@ -13,7 +13,7 @@
 
 @implementation GameScene {
     CMMotionManager *_motionManager;
-    CCSprite *_planeSprite;
+    APHeroPlane *_planeSprite;
     NSMutableArray *_sprites;
 }
 
@@ -95,7 +95,7 @@ float rotationSpeed = 10.0f;
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     if (touchLocation.x > screenSize.width/2.0f) {
-        APWeapon *w = [_planeSprite shoot];
+        APWeapon *w = [_planeSprite shoot:MACHINE_GUN];
         [self addChild:w];
         [_sprites addObject:w];
     }
