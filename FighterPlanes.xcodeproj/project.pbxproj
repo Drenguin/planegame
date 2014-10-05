@@ -215,6 +215,7 @@
 		D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2C719E0A4770093A7CC /* enemyPlane.png */; };
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
+		D4CBE2D419E0D5740093A7CC /* suicidePlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2D319E0D5740093A7CC /* suicidePlane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -636,6 +637,7 @@
 		D4CBE2C719E0A4770093A7CC /* enemyPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyPlane.png; sourceTree = "<group>"; };
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		D4CBE2D319E0D5740093A7CC /* suicidePlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suicidePlane.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -733,6 +735,7 @@
 				D4CBE2CD19E0BB070093A7CC /* missile.png */,
 				8577291E19E0A99D00D80562 /* california.png */,
 				85747FA819E09C7D0002C24B /* plane.png */,
+				D4CBE2D319E0D5740093A7CC /* suicidePlane.png */,
 				D4CBE2C719E0A4770093A7CC /* enemyPlane.png */,
 				85D4867E19E08E1C00CC3D66 /* Default.png */,
 				85D4868019E08E1C00CC3D66 /* Default@2x.png */,
@@ -1589,6 +1592,7 @@
 				D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */,
 				85D4868519E08E1C00CC3D66 /* Default-Landscape~ipad.png in Resources */,
 				85D4869A19E08E1C00CC3D66 /* Icon-Small.png in Resources */,
+				D4CBE2D419E0D5740093A7CC /* suicidePlane.png in Resources */,
 				85D4869819E08E1C00CC3D66 /* Icon-Small-50.png in Resources */,
 				85D488D619E08E1E00CC3D66 /* LICENSE_Chipmunk.txt in Resources */,
 				85D4868C19E08E1C00CC3D66 /* Icon-72.png in Resources */,

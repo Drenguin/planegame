@@ -13,7 +13,7 @@
 
 - (id)init {
     // Apple recommend assigning self with supers return value
-    self = [super initWithImageNamed:@"enemyPlane.png"];
+    self = [super initWithImageNamed:@"suicidePlane.png"];
     if (!self) return(nil);
     
     self.scale = .125f;
