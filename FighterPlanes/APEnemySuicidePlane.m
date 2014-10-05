@@ -24,12 +24,6 @@
     return self;
 }
 
-- (float) setDirection {
-    
-    
-    return 0.0;
-}
-
 - (void)update:(CCTime)delta {
     float deltx = self.heroSprite.position.x - self.position.x;
     float delty = self.heroSprite.position.y - self.position.y;
