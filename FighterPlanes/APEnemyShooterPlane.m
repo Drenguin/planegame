@@ -24,7 +24,7 @@
     return self;
 }
 
-- (void)update:(CCTime)delta {
+- (void)tick:(CCTime)delta {
     float deltx = self.heroSprite.position.x - self.position.x;
     float delty = self.heroSprite.position.y - self.position.y;
     float angle = atan(delty/deltx);
@@ -35,7 +35,7 @@
     self.rotation = CC_RADIANS_TO_DEGREES(angle);
     
     
-    self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
+    //self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
 }
 
 

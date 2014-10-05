@@ -223,6 +223,7 @@
 		D4CBE2DD19E0EAE80093A7CC /* obstaclePlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2DC19E0EAE80093A7CC /* obstaclePlane.png */; };
 		D4CBE2DF19E0FFE80093A7CC /* obstaclePlane2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2DE19E0FFE80093A7CC /* obstaclePlane2.png */; };
 		D4CBE2E119E10DC80093A7CC /* enemyBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2E019E10DC80093A7CC /* enemyBullet.png */; };
+		D4CBE2E719E10F4E0093A7CC /* APEnemyBulletWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CBE2E619E10F4E0093A7CC /* APEnemyBulletWeapon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -655,6 +656,8 @@
 		D4CBE2DC19E0EAE80093A7CC /* obstaclePlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstaclePlane.png; sourceTree = "<group>"; };
 		D4CBE2DE19E0FFE80093A7CC /* obstaclePlane2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstaclePlane2.png; sourceTree = "<group>"; };
 		D4CBE2E019E10DC80093A7CC /* enemyBullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyBullet.png; sourceTree = "<group>"; };
+		D4CBE2E519E10F4E0093A7CC /* APEnemyBulletWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APEnemyBulletWeapon.h; sourceTree = "<group>"; };
+		D4CBE2E619E10F4E0093A7CC /* APEnemyBulletWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APEnemyBulletWeapon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -689,6 +692,8 @@
 				850DC75519E0C1F1002A9244 /* APMachineGunWeapon.m */,
 				850DC75719E0C204002A9244 /* APMissileWeapon.h */,
 				850DC75819E0C204002A9244 /* APMissileWeapon.m */,
+				D4CBE2E519E10F4E0093A7CC /* APEnemyBulletWeapon.h */,
+				D4CBE2E619E10F4E0093A7CC /* APEnemyBulletWeapon.m */,
 			);
 			name = Weapons;
 			sourceTree = "<group>";
@@ -1784,6 +1789,7 @@
 				85D4879519E08E1D00CC3D66 /* CCDirectorIOS.m in Sources */,
 				85D4872F19E08E1D00CC3D66 /* CCParticleBatchNode.m in Sources */,
 				85D487C919E08E1D00CC3D66 /* NSAttributedString+CCAdditions.m in Sources */,
+				D4CBE2E719E10F4E0093A7CC /* APEnemyBulletWeapon.m in Sources */,
 				85D488DA19E08E1E00CC3D66 /* main.m in Sources */,
 				85D488E419E08E1E00CC3D66 /* IntroScene.m in Sources */,
 				85D486C719E08E1C00CC3D66 /* CCEffectStack.m in Sources */,

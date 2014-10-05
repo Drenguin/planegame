@@ -33,7 +33,7 @@
         angle = angle + M_PI;
     }
     angle = -1*angle + M_PI/2;
-    float average = (self.rotation + angle)/2;
+    float average = (CC_DEGREES_TO_RADIANS(self.rotation) + angle)/2;
     self.rotation = CC_RADIANS_TO_DEGREES(average);
     
     NSLog(@"ENEMY: %f", _speed);
