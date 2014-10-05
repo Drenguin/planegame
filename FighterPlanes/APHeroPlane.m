@@ -25,7 +25,7 @@ NSMutableDictionary *weaponsToShoot;
     if (!self) return(nil);
     
     self.health = 5;
-    _speed = 2.f;
+    _speed = 2.5f;
     
     machineGunTimeToWaitForReload = 0.0f;
     missileTimeToWaitForReload = 0.0f;

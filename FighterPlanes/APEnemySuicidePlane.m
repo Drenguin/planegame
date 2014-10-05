@@ -24,7 +24,7 @@
 }
 
 - (void)update:(CCTime)delta {
-    self.position = ccp(self.position.x+delta*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
+    self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
 }
 
 @end

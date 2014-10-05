@@ -9,12 +9,15 @@
 #import "GameScene.h"
 #import <CoreMotion/CoreMotion.h>
 #import "APHeroPlane.h"
+#import "APObstaclePlane.h"
 
 
 @implementation GameScene {
     CMMotionManager *_motionManager;
     APHeroPlane *_planeSprite;
-    NSMutableArray *_sprites;
+    NSMutableArray *_heroWeapons;
+    NSMutableArray *_enemyPlanes;
+    CCSprite *_background;
 }
 
 float rotationSpeed = 10.0f;
@@ -36,16 +39,18 @@ float newEnemyReloadTime;
     
     _motionManager = [[CMMotionManager alloc] init];
     
-    _sprites = [[NSMutableArray alloc] init];
+    _heroWeapons = [[NSMutableArray alloc] init];
+    _enemyPlanes = [[NSMutableArray alloc] init];
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
     // Create a colored background (Dark Grey)
-    CCSprite *background = [CCSprite spriteWithImageNamed:@"california.png"];
-    background.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
-    background.scale = 0.5f;
+    _background = [CCSprite spriteWithImageNamed:@"california.png"];
+    _background.anchorPoint = ccp(0,0);
+    _background.position = ccp(0, 0);
+    _background.scale = 0.5f;
     
-    newEnemyReloadTime = 2.0f;
+    newEnemyReloadTime = 0.5f;
     newEnemyTimer = newEnemyReloadTime;
     
     _planeSprite = [[APHeroPlane alloc] init];
@@ -54,9 +59,7 @@ float newEnemyReloadTime;
     _planeSprite.scale = 1.0f;
     [_planeSprite.texture setAntialiased:NO];
     
-    [_sprites addObject:background];
-    
-    [self addChild:background z:-1];
+    [self addChild:_background z:-1];
     [self addChild:_planeSprite z:1];
     
     // done
@@ -71,18 +74,72 @@ float newEnemyReloadTime;
     _planeSprite.position = ccp(_planeSprite.position.x+[_planeSprite getSpeed]*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + [_planeSprite getSpeed]*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    
+    float x = MAX(_planeSprite.position.x, screenSize.width/2.0f);
+    float y = MAX(_planeSprite.position.y, screenSize.height/2.0f);
+    x = MIN(x, _background.boundingBox.size.width-screenSize.width/2.0f);
+    y = MIN(y, _background.boundingBox.size.height-screenSize.height/2.0f);
+    
     CGPoint centerOfView = ccp(screenSize.width/2, screenSize.height/2);
-    CGPoint viewPoint = ccpSub(centerOfView, _planeSprite.position);
+    CGPoint viewPoint = ccpSub(centerOfView, ccp(x,y));
     self.position = viewPoint;
     
     // To get this working we need to change self.position by the sin and cos of _planeSprite.rotation
-//    self.rotation = _planeSprite.rotation;
+    //self.rotation = _planeSprite.rotation;
+    //self.position = ccp(self.position.x + screenSize.width*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y + screenSize.width*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
     
     [_planeSprite update:delta];
-    for (CCSprite *s in _sprites) {
-        if ([s isKindOfClass:[APWeapon class]]) {
-            [s update:delta];
+    
+    NSMutableArray *enemyPlanesToRemove = [[NSMutableArray alloc] init];
+    
+    for (CCSprite *p in _enemyPlanes) {
+        [p update:delta];
+        if (!CGRectIntersectsRect([p boundingBox], [_background boundingBox])) {
+            [enemyPlanesToRemove addObject:p];
         }
+    }
+    for (CCSprite *p in enemyPlanesToRemove) {
+        [self removeChild:p];
+        [_enemyPlanes removeObject:p];
+    }
+    
+    NSMutableArray *weaponsToRemove = [[NSMutableArray alloc] init];
+    
+    for (APWeapon *w in _heroWeapons) {
+        [w update:delta];
+        if (!CGRectIntersectsRect([w boundingBox], [_background boundingBox])) {
+            [weaponsToRemove addObject:w];
+        }
+    }
+    
+    for (CCSprite *w in weaponsToRemove) {
+        [self removeChild:w];
+        [_heroWeapons removeObject:w];
+    }
+    
+    weaponsToRemove = [[NSMutableArray alloc] init];
+    enemyPlanesToRemove = [[NSMutableArray alloc] init];
+    
+    for (APWeapon *w in _heroWeapons) {
+        for (APPlane *p in _enemyPlanes) {
+            if (CGRectIntersectsRect([w boundingBox], [p boundingBox])) {
+                [weaponsToRemove addObject:w];
+                
+                p.health -= [w getDamage];
+                if (p.health <= 0) {
+                    [enemyPlanesToRemove addObject:p];
+                }
+            }
+        }
+    }
+    
+    for (CCSprite *p in enemyPlanesToRemove) {
+        [self removeChild:p];
+        [_enemyPlanes removeObject:p];
+    }
+    for (CCSprite *w in weaponsToRemove) {
+        [self removeChild:w];
+        [_heroWeapons removeObject:w];
     }
     
     newEnemyTimer -= delta;
@@ -105,7 +162,21 @@ float newEnemyReloadTime;
 }
 
 - (void)createEnemy {
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
+    APObstaclePlane *enemyPlane = [[APObstaclePlane alloc] init];
+    enemyPlane.rotation = (arc4random()%365);
+    
+    float x = (arc4random()%((int)_background.boundingBox.size.width));
+    float y = (arc4random()%((int)_background.boundingBox.size.height));
+    
+    while (!((x>self.position.x+screenSize.width/2.0f || x<self.position.x-screenSize.width/2.0f) && (y>self.position.y+screenSize.height/2.0f || y<self.position.y-screenSize.height/2.0f))) {
+        x = (arc4random()%((int)_background.boundingBox.size.width));
+        y = (arc4random()%((int)_background.boundingBox.size.height));
+    }
+    enemyPlane.position = ccp(x,y);
+    
+    [self addSprite:enemyPlane];
 }
 
 - (void)heroStartShoot:(int)weaponType {
@@ -117,7 +188,11 @@ float newEnemyReloadTime;
 }
 
 - (void)addSprite:(CCSprite *)s {
-    [_sprites addObject:s];
+    if ([s isKindOfClass:[APWeapon class]]) {
+        [_heroWeapons addObject:s];
+    } else if ([s isKindOfClass:[APPlane class]]) {
+        [_enemyPlanes addObject:s];
+    }
     [self addChild:s];
 }
 
