@@ -13,7 +13,7 @@
     float _speed;
 }
 
-@property (nonatomic, assign) int health;
+@property (nonatomic, assign) float health;
 
 - (void)update:(CCTime)delta;
 
