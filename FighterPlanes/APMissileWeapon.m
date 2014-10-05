@@ -11,4 +11,15 @@
 
 @implementation APMissileWeapon
 
+- (id)init {
+    // Apple recommend assigning self with supers return value
+    self = [super initWithImageNamed:@"missile.png"];
+    if (!self) return(nil);
+    
+    _damage = 5.0f;
+    _speed = 5.0f;
+    _reloadRate = 3.0f;
+    
+    return self;
+}
 @end
