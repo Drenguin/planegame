@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+#define MACHINE_GUN 0
+#define MISSILE 1
+
+
 @interface APPlane : CCSprite {
     float _speed;
 }

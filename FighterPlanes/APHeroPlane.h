@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "APPlane.h"
+#import "APWeapon.h"
 
 @interface APHeroPlane : APPlane {
     
 }
+
+- (APWeapon *)shoot:(int)weaponType;
 
 @end

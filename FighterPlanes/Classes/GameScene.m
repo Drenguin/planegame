@@ -32,6 +32,8 @@ float rotationSpeed = 10.0f;
     self = [super init];
     if (!self) return(nil);
     
+    self.userInteractionEnabled = YES;
+    
     _motionManager = [[CMMotionManager alloc] init];
     
     _sprites = [[NSMutableArray alloc] init];
@@ -80,6 +82,17 @@ float rotationSpeed = 10.0f;
         //NSLog(@"%f, %f",s.anchorPoint.x, s.anchorPoint.y);
         //s.rotation = s.rotation + newRotOffset;
     }*/
+}
+
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    // we want to know the location of our touch in this scene
+    CGPoint touchLocation = [touch locationInNode:self];
+    
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    if (touchLocation.x > screenSize.width/2.0f) {
+        
+    }
 }
 
 - (void)onEnter {

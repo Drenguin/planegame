@@ -8,7 +8,6 @@
 
 #import "APPlane.h"
 
-
 @implementation APPlane
 
 @end
