@@ -49,8 +49,8 @@ float rotationSpeed = 10.0f;
     
     [_sprites addObject:background];
     
-    [self addChild:background];
-    [self addChild:_planeSprite];
+    [self addChild:background z:-1];
+    [self addChild:_planeSprite z:1];
     
     // done
     return self;
@@ -67,6 +67,9 @@ float rotationSpeed = 10.0f;
     CGPoint centerOfView = ccp(screenSize.width/2, screenSize.height/2);
     CGPoint viewPoint = ccpSub(centerOfView, _planeSprite.position);
     self.position = viewPoint;
+    
+    // To get this working we need to change self.position by the sin and cos of _planeSprite.rotation
+    //self.rotation = -1*_planeSprite.rotation;
     
     for (CCSprite *s in _sprites) {
         if ([s isKindOfClass:[APWeapon class]]) {
@@ -89,7 +92,7 @@ float rotationSpeed = 10.0f;
 
 - (void)heroShoot:(int)weaponType {
     APWeapon *w = [_planeSprite shoot:weaponType];
-    [self addChild:w];
+    [self addChild:w z:0];
     [_sprites addObject:w];
 }
 
