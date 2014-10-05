@@ -15,10 +15,10 @@
     float _reloadRate;
 }
 
-@property (nonatomic, assign) CGPoint velocity;
-
 - (float)getDamage;
 - (float)getSpeed;
 - (float)getReloadRate;
+
+- (void)update:(CCTime)delta;
 
 @end

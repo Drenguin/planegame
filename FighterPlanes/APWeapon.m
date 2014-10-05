@@ -24,4 +24,8 @@
     return _reloadRate;
 }
 
+- (void)update:(CCTime)delta {
+    self.position = ccp(self.position.x+self.velocity.x, self.position.y+self.velocity.y);
+}
+
 @end

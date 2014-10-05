@@ -71,6 +71,10 @@ float rotationSpeed = 10.0f;
     CGPoint viewPoint = ccpSub(centerOfView, _planeSprite.position);
     self.position = viewPoint;
     
+    for (CCSprite *s in _sprites) {
+        [s update:delta];
+    }
+    
     /*//float newRotOffset = -1*acceleration.y*delta*60.0f;
     float newXOffset = -1*planeSpeed*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation));
     float newYOffset = -1*planeSpeed*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation));
@@ -91,7 +95,9 @@ float rotationSpeed = 10.0f;
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     if (touchLocation.x > screenSize.width/2.0f) {
-        
+        APWeapon *w = [_planeSprite shoot];
+        [self addChild:w];
+        [_sprites addObject:w];
     }
 }
 
