@@ -10,7 +10,6 @@
 
 
 @implementation APWeapon
-@synthesize velocity;
 
 - (float)getDamage {
     return _damage;
@@ -25,7 +24,7 @@
 }
 
 - (void)update:(CCTime)delta {
-    self.position = ccp(self.position.x+self.velocity.x, self.position.y+self.velocity.y);
+    self.position = ccp(self.position.x+_speed*-1*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
 }
 
 @end
