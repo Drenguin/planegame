@@ -7,6 +7,8 @@
 //
 
 #import "APHeroPlane.h"
+#import "APMachineGunWeapon.h"
+#import "APMissileWeapon.h"
 
 
 @implementation APHeroPlane
@@ -20,6 +22,18 @@
     _speed = 3.0f;
     
     return self;
+}
+
+- (APWeapon *)shoot:(int)weaponType {
+    if (weaponType == MACHINE_GUN) {
+        APMachineGunWeapon *machn = [[APMachineGunWeapon alloc] init];
+        machn.rotation = self.rotation;
+        return machn;
+    } else {
+        APMissileWeapon *mssl = [[APMissileWeapon alloc] init];
+        mssl.rotation = self.rotation;
+        return mssl;
+    }
 }
 
 
