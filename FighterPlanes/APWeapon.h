@@ -13,13 +13,12 @@
     float _damage;
     float _speed;
     float _reloadRate;
-    
-    CGPoint velocity;
 }
 
 - (float)getDamage;
 - (float)getSpeed;
 - (float)getReloadRate;
-- (CGPoint)getVelocity;
+
+- (void)update:(CCTime)delta;
 
 @end
