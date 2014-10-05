@@ -31,6 +31,7 @@
     self.multipleTouchEnabled = YES;
     
     _gameScene = [GameScene scene];
+    _gameScene.gameHudScene = self;
     
     [self addChild:_gameScene];
     

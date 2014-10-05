@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameHudScene.h"
 
 @interface GameScene : CCScene {
     
 }
+
+@property (nonatomic, retain) GameHudScene *gameHudScene;
 
 + (GameScene *)scene;
 - (id)init;

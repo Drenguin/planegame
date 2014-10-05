@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import "APHeroPlane.h"
 #import "APObstaclePlane.h"
+#import "APEnemySuicidePlane.h"
 
 
 @implementation GameScene {
@@ -50,7 +51,7 @@ float newEnemyReloadTime;
     _background.position = ccp(0, 0);
     _background.scale = 0.5f;
     
-    newEnemyReloadTime = 0.1f;
+    newEnemyReloadTime = 0.5f;
     newEnemyTimer = newEnemyReloadTime;
     
     _planeSprite = [[APHeroPlane alloc] init];
@@ -96,6 +97,11 @@ float newEnemyReloadTime;
         [p update:delta];
         if (!CGRectIntersectsRect([p boundingBox], [_background boundingBox])) {
             [enemyPlanesToRemove addObject:p];
+        }
+        
+        if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
+            [self setPaused:YES];
+            [self.gameHudScene gameOver];
         }
     }
     for (CCSprite *p in enemyPlanesToRemove) {
@@ -166,13 +172,14 @@ float newEnemyReloadTime;
 - (void)createEnemy {
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
-    APObstaclePlane *enemyPlane = [[APObstaclePlane alloc] init];
+    APEnemySuicidePlane *enemyPlane = [[APEnemySuicidePlane alloc] init];
     enemyPlane.rotation = (arc4random()%365);
     
     float x = (arc4random()%((int)_background.boundingBox.size.width));
     float y = (arc4random()%((int)_background.boundingBox.size.height));
     
     while (!((x>(self.position.x+screenSize.width) || x<(self.position.x)) && (y>(self.position.y+screenSize.height) || y<(self.position.y)))) {
+        
         x = (arc4random()%((int)_background.boundingBox.size.width));
         y = (arc4random()%((int)_background.boundingBox.size.height));
     }

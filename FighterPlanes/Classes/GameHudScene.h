@@ -16,4 +16,6 @@
 + (GameHudScene *)scene;
 - (id)init;
 
+- (void)gameOver;
+
 @end
