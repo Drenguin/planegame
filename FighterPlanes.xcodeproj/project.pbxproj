@@ -220,6 +220,7 @@
 		D4CBE2D619E0DC0B0093A7CC /* heroPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */; };
 		D4CBE2D819E0E2800093A7CC /* heroPlane2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2D719E0E2800093A7CC /* heroPlane2.png */; };
 		D4CBE2DB19E0E41D0093A7CC /* APObstaclePlane.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CBE2DA19E0E41D0093A7CC /* APObstaclePlane.m */; };
+		D4CBE2DD19E0EAE80093A7CC /* obstaclePlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2DC19E0EAE80093A7CC /* obstaclePlane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -649,6 +650,7 @@
 		D4CBE2D719E0E2800093A7CC /* heroPlane2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroPlane2.png; sourceTree = "<group>"; };
 		D4CBE2D919E0E41D0093A7CC /* APObstaclePlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APObstaclePlane.h; sourceTree = "<group>"; };
 		D4CBE2DA19E0E41D0093A7CC /* APObstaclePlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APObstaclePlane.m; sourceTree = "<group>"; };
+		D4CBE2DC19E0EAE80093A7CC /* obstaclePlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = obstaclePlane.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -750,6 +752,7 @@
 				D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */,
 				D4CBE2D719E0E2800093A7CC /* heroPlane2.png */,
 				85747FA819E09C7D0002C24B /* plane.png */,
+				D4CBE2DC19E0EAE80093A7CC /* obstaclePlane.png */,
 				D4CBE2D319E0D5740093A7CC /* suicidePlane.png */,
 				D4CBE2C719E0A4770093A7CC /* enemyPlane.png */,
 				85D4867E19E08E1C00CC3D66 /* Default.png */,
@@ -1614,6 +1617,7 @@
 				85D4869819E08E1C00CC3D66 /* Icon-Small-50.png in Resources */,
 				D4CBE2D819E0E2800093A7CC /* heroPlane2.png in Resources */,
 				85D488D619E08E1E00CC3D66 /* LICENSE_Chipmunk.txt in Resources */,
+				D4CBE2DD19E0EAE80093A7CC /* obstaclePlane.png in Resources */,
 				85D4868C19E08E1C00CC3D66 /* Icon-72.png in Resources */,
 				85D4886819E08E1E00CC3D66 /* LICENSE_CCBReader.txt in Resources */,
 				85D487D819E08E1D00CC3D66 /* LICENSE_cocos2d.txt in Resources */,
