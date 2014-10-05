@@ -216,6 +216,7 @@
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
 		D4CBE2D419E0D5740093A7CC /* suicidePlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2D319E0D5740093A7CC /* suicidePlane.png */; };
+		D4CBE2D619E0DC0B0093A7CC /* heroPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -638,6 +639,7 @@
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		D4CBE2D319E0D5740093A7CC /* suicidePlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suicidePlane.png; sourceTree = "<group>"; };
+		D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heroPlane.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -734,6 +736,7 @@
 				D4CBE2CF19E0BB100093A7CC /* bullet.png */,
 				D4CBE2CD19E0BB070093A7CC /* missile.png */,
 				8577291E19E0A99D00D80562 /* california.png */,
+				D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */,
 				85747FA819E09C7D0002C24B /* plane.png */,
 				D4CBE2D319E0D5740093A7CC /* suicidePlane.png */,
 				D4CBE2C719E0A4770093A7CC /* enemyPlane.png */,
@@ -1598,6 +1601,7 @@
 				85D4868C19E08E1C00CC3D66 /* Icon-72.png in Resources */,
 				85D4886819E08E1E00CC3D66 /* LICENSE_CCBReader.txt in Resources */,
 				85D487D819E08E1D00CC3D66 /* LICENSE_cocos2d.txt in Resources */,
+				D4CBE2D619E0DC0B0093A7CC /* heroPlane.png in Resources */,
 				85D4868319E08E1C00CC3D66 /* Default-568h@2x.png in Resources */,
 				D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */,
 				85D486A319E08E1C00CC3D66 /* iTunesArtwork in Resources */,

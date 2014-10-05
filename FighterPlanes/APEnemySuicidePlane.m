@@ -16,7 +16,7 @@
     self = [super initWithImageNamed:@"suicidePlane.png"];
     if (!self) return(nil);
     
-    self.scale = .125f;
+    self.scale = .5f;
     self.health = 1;
     _speed = 1.5f;
     
