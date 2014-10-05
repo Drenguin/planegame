@@ -11,4 +11,15 @@
 
 @implementation APHeroPlane
 
+- (id)init {
+    // Apple recommend assigning self with supers return value
+    self = [super initWithImageNamed:@"enemyPlane.png"];
+    if (!self) return(nil);
+    
+    self.health = 5;
+    _speed = 3.0f;
+    
+    return self;
+}
+
 @end
