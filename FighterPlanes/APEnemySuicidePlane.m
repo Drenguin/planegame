@@ -16,6 +16,7 @@
     self = [super initWithImageNamed:@"enemyPlane.png"];
     if (!self) return(nil);
     
+    self.scale = .125f;
     self.health = 1;
     _speed = 1.5f;
     
