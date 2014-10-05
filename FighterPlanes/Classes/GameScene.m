@@ -50,7 +50,7 @@ float newEnemyReloadTime;
     _background.position = ccp(0, 0);
     _background.scale = 0.5f;
     
-    newEnemyReloadTime = 0.5f;
+    newEnemyReloadTime = 0.1f;
     newEnemyTimer = newEnemyReloadTime;
     
     _planeSprite = [[APHeroPlane alloc] init];
@@ -122,12 +122,14 @@ float newEnemyReloadTime;
     
     for (APWeapon *w in _heroWeapons) {
         for (APPlane *p in _enemyPlanes) {
-            if (CGRectIntersectsRect([w boundingBox], [p boundingBox])) {
+            if (w.visible && p.visible && CGRectIntersectsRect([w boundingBox], [p boundingBox])) {
                 [weaponsToRemove addObject:w];
+                w.visible = NO;
                 
                 p.health -= [w getDamage];
                 if (p.health <= 0) {
                     [enemyPlanesToRemove addObject:p];
+                    p.visible = NO;
                 }
             }
         }
@@ -170,7 +172,7 @@ float newEnemyReloadTime;
     float x = (arc4random()%((int)_background.boundingBox.size.width));
     float y = (arc4random()%((int)_background.boundingBox.size.height));
     
-    while (!((x>self.position.x+screenSize.width/2.0f || x<self.position.x-screenSize.width/2.0f) && (y>self.position.y+screenSize.height/2.0f || y<self.position.y-screenSize.height/2.0f))) {
+    while (!((x>(self.position.x+screenSize.width) || x<(self.position.x)) && (y>(self.position.y+screenSize.height) || y<(self.position.y)))) {
         x = (arc4random()%((int)_background.boundingBox.size.width));
         y = (arc4random()%((int)_background.boundingBox.size.height));
     }
