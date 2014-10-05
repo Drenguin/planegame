@@ -16,6 +16,7 @@
     self = [super initWithImageNamed:@"bullet.png"];
     if (!self) return(nil);
     
+    self.scale = .1f;
     _damage = 0.2f;
     _speed = 8.0f;
     _reloadRate = .1f;

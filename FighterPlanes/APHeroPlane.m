@@ -28,10 +28,12 @@
     if (weaponType == MACHINE_GUN) {
         APMachineGunWeapon *machn = [[APMachineGunWeapon alloc] init];
         machn.rotation = self.rotation;
+        machn.position = self.position;
         return machn;
     } else {
         APMissileWeapon *mssl = [[APMissileWeapon alloc] init];
         mssl.rotation = self.rotation;
+        mssl.position = self.position;
         return mssl;
     }
 }
