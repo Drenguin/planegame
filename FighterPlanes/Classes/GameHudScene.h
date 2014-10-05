@@ -1,5 +1,5 @@
 //
-//  GameScene.h
+//  GameHudScene.h
 //  FighterPlanes
 //
 //  Created by Patrick Mc Gartoll on 10/4/14.
@@ -9,13 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameScene : CCScene {
+@interface GameHudScene : CCScene {
     
 }
 
-+ (GameScene *)scene;
++ (GameHudScene *)scene;
 - (id)init;
-
-- (void)heroShoot:(int)weaponType;
 
 @end

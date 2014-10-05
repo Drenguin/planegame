@@ -212,6 +212,7 @@
 		85D488DE19E08E1E00CC3D66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488DD19E08E1E00CC3D66 /* AppDelegate.m */; };
 		85D488E419E08E1E00CC3D66 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488E319E08E1E00CC3D66 /* IntroScene.m */; };
 		85D488EE19E092A900CC3D66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D488ED19E092A900CC3D66 /* AudioToolbox.framework */; };
+		85DD2BA119E0DE2100EC9AEB /* GameHudScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */; };
 		D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2C719E0A4770093A7CC /* enemyPlane.png */; };
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
@@ -633,6 +634,9 @@
 		85D488E219E08E1E00CC3D66 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		85D488E319E08E1E00CC3D66 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
 		85D488ED19E092A900CC3D66 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		85DD2B9F19E0DE2100EC9AEB /* GameHudScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameHudScene.h; path = Classes/GameHudScene.h; sourceTree = "<group>"; };
+		85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameHudScene.m; path = Classes/GameHudScene.m; sourceTree = "<group>"; };
+		85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDefinedAttributes.h; path = Classes/APDefinedAttributes.h; sourceTree = "<group>"; };
 		D4CBE2C719E0A4770093A7CC /* enemyPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyPlane.png; sourceTree = "<group>"; };
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -1471,12 +1475,15 @@
 		85D488DB19E08E1E00CC3D66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */,
 				85D488DC19E08E1E00CC3D66 /* AppDelegate.h */,
 				85D488DD19E08E1E00CC3D66 /* AppDelegate.m */,
 				85D488E219E08E1E00CC3D66 /* IntroScene.h */,
 				85D488E319E08E1E00CC3D66 /* IntroScene.m */,
 				85747FA519E098EE0002C24B /* GameScene.h */,
 				85747FA619E098EE0002C24B /* GameScene.m */,
+				85DD2B9F19E0DE2100EC9AEB /* GameHudScene.h */,
+				85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */,
 				850DC75A19E0C211002A9244 /* Weapons */,
 				8577292C19E0BCEA00D80562 /* Planes */,
 			);
@@ -1679,6 +1686,7 @@
 				85D4871F19E08E1C00CC3D66 /* CCMotionStreak.m in Sources */,
 				85D4882919E08E1D00CC3D66 /* NSMutableArray+WeakReferences.m in Sources */,
 				85D4881719E08E1D00CC3D66 /* OpenALManager.m in Sources */,
+				85DD2BA119E0DE2100EC9AEB /* GameHudScene.m in Sources */,
 				85D4878719E08E1D00CC3D66 /* CCTMXXMLParser.m in Sources */,
 				85D487BC19E08E1D00CC3D66 /* CCProfiling.m in Sources */,
 				85D4881E19E08E1D00CC3D66 /* OALSuspendHandler.m in Sources */,

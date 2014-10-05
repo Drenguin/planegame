@@ -31,9 +31,6 @@ float rotationSpeed = 10.0f;
     self = [super init];
     if (!self) return(nil);
     
-    self.userInteractionEnabled = YES;
-    self.multipleTouchEnabled = YES;
-    
     _motionManager = [[CMMotionManager alloc] init];
     
     _sprites = [[NSMutableArray alloc] init];
@@ -64,7 +61,7 @@ float rotationSpeed = 10.0f;
     CMAcceleration acceleration = accelerometerData.acceleration;
     
     _planeSprite.rotation += acceleration.y*delta*rotationSpeed*60.0f;
-    //_planeSprite.position = ccp(_planeSprite.position.x+[_planeSprite getSpeed]*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + [_planeSprite getSpeed]*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
+    _planeSprite.position = ccp(_planeSprite.position.x+[_planeSprite getSpeed]*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + [_planeSprite getSpeed]*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     CGPoint centerOfView = ccp(screenSize.width/2, screenSize.height/2);
@@ -90,20 +87,10 @@ float rotationSpeed = 10.0f;
     }*/
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    // we want to know the location of our touch in this scene
-    CGPoint touchLocation = [touch locationInView:[touch view]];
-    touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
-    NSLog(@"%f", touchLocation.x);
-    
-    
-    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
-    if (touchLocation.x > screenSize.width/2.0f) {
-        APWeapon *w = [_planeSprite shoot:MACHINE_GUN];
-        [self addChild:w];
-        [_sprites addObject:w];
-    }
+- (void)heroShoot:(int)weaponType {
+    APWeapon *w = [_planeSprite shoot:weaponType];
+    [self addChild:w];
+    [_sprites addObject:w];
 }
 
 - (void)onEnter {

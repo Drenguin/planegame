@@ -9,6 +9,7 @@
 #import "APHeroPlane.h"
 #import "APMachineGunWeapon.h"
 #import "APMissileWeapon.h"
+#import "APDefinedAttributes.h"
 
 
 @implementation APHeroPlane
@@ -19,7 +20,7 @@
     if (!self) return(nil);
     
     self.health = 5;
-    _speed = 3.0f;
+    _speed = 0.5f;
     
     return self;
 }
