@@ -11,4 +11,16 @@
 
 @implementation APWeapon
 
+- (float)getDamage {
+    return _damage;
+}
+
+- (float)getSpeed {
+    return _speed;
+}
+
+- (float)getReloadRate {
+    return _reloadRate;
+}
+
 @end
