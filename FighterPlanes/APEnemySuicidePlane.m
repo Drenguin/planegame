@@ -29,7 +29,7 @@
     float delty = self.heroSprite.position.y - self.position.y;
     float angle = atan(delty/deltx);
     if (deltx < 0) {
-        angle = angle * -1;
+        angle = angle + M_PI;
     }
     angle = -1*angle + M_PI/2;
     self.rotation = CC_RADIANS_TO_DEGREES(angle);
