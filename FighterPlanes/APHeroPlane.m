@@ -20,7 +20,7 @@
     if (!self) return(nil);
     
     self.health = 5;
-    _speed = 0.5f;
+    _speed = 2.f;
     
     return self;
 }
