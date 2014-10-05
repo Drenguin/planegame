@@ -16,11 +16,18 @@
     self = [super initWithImageNamed:@"suicidePlane.png"];
     if (!self) return(nil);
     
-    self.scale = .5f;
+    self.scale = .25f;
     self.health = 1;
     _speed = 2.0f;
     
     return self;
+}
+
+- (float) setDirection {
+    float deltx = self.heroSprite.position.x - self.position.x;
+    float delty = self.heroSprite.position.y - self.position.y;
+    
+    return 0.0;
 }
 
 - (void)update:(CCTime)delta {

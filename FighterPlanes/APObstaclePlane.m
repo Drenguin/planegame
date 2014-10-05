@@ -16,7 +16,7 @@
     self = [super initWithImageNamed:@"obstaclePlane.png"];
     if (!self) return(nil);
     
-    self.scale = .25f;
+    self.scale = .75f;
     self.health = 1;
     _speed = 1.0f;
     
