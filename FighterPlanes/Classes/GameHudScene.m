@@ -65,7 +65,7 @@
 }
 
 - (void)gameOver {
-    
+    NSLog(@"GAME OVER");
 }
 
 @end

@@ -100,7 +100,7 @@ float newEnemyReloadTime;
         }
         
         if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
-            [self setPaused:YES];
+            //[self setPaused:YES];
             [self.gameHudScene gameOver];
         }
     }
