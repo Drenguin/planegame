@@ -27,19 +27,31 @@
 }
 
 - (void)tick:(CCTime)delta {
-    float deltx = self.heroSprite.position.x - self.position.x;
-    float delty = self.heroSprite.position.y - self.position.y;
-    float angle = atan(delty/deltx);
-    if (deltx < 0) {
-        angle = angle + M_PI;
-    }
-    angle = -1*angle + M_PI/2;
-    float goToAngleDegrees = CC_RADIANS_TO_DEGREES(angle);
-    goToAngleDegrees = fmodf(goToAngleDegrees, 360.0f);
-    float rotationDiff = goToAngleDegrees-self.rotation;
-    self.rotation += rotationDiff;
     
-    self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
+    if (!self.locked_on) {
+        float deltx = self.heroSprite.position.x - self.position.x;
+        float delty = self.heroSprite.position.y - self.position.y;
+        float angle = atan(delty/deltx);
+        double distance = sqrt(powf(deltx, 2.0f) + powf(delty, 2.0f));
+        if (distance < 250) {
+            self.locked_on = true;
+        }
+        if (deltx < 0) {
+            angle = angle + M_PI;
+        }
+        angle = -1*angle + M_PI/2;
+        float goToAngleDegrees = CC_RADIANS_TO_DEGREES(angle);
+        goToAngleDegrees = fmodf(goToAngleDegrees, 360.0f);
+        float rotationDiff = goToAngleDegrees-self.rotation;
+        self.rotation += rotationDiff;
+    
+        self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
+    }
+    else {
+        self.position = ccp(self.position.x+delta*60.0f*_speed*sin(CC_DEGREES_TO_RADIANS(self.rotation)), self.position.y+delta*60.0f*_speed*cos(CC_DEGREES_TO_RADIANS(self.rotation)));
+    }
+    
+    
 }
 
 @end
