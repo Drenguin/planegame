@@ -42,7 +42,7 @@ float timeToWaitForReload;
     
     timeToWaitForReload -= delta;
     
-    if (timeToWaitForReload <= 0 && distance < 200) {
+    if (timeToWaitForReload <= 0 && distance < 250) {
         APEnemyBulletWeapon *bul = [[APEnemyBulletWeapon alloc] init];
         bul.rotation = self.rotation;
         bul.position = self.position;

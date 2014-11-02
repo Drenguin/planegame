@@ -14,10 +14,10 @@
 
 - (id)init {
     // Apple recommend assigning self with supers return value
-    self = [super initWithImageNamed:@"suicidePlane.png"];
+    self = [super initWithImageNamed:@"suicidePlane2.png"];
     if (!self) return(nil);
     
-    self.scale = .25f;
+    self.scale = .2f;
     self.health = 1;
     self.locked_on = false;
     _scoreValue = 3;
