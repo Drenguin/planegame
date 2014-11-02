@@ -238,7 +238,7 @@ float totalTime;
     float x = (arc4random()%((int)_background.boundingBox.size.width));
     float y = (arc4random()%((int)_background.boundingBox.size.height));
     
-    while (!((x>(self.position.x+screenSize.width+SPAWN_BOUNDS_OFFSET) || x<(self.position.x-SPAWN_BOUNDS_OFFSET)) && (y>(self.position.y+screenSize.height+SPAWN_BOUNDS_OFFSET) || y<(self.position.y-SPAWN_BOUNDS_OFFSET)))) {
+    while (!((x>(-1*self.position.x+screenSize.width+SPAWN_BOUNDS_OFFSET) || x<(-1*self.position.x-SPAWN_BOUNDS_OFFSET)) && (y>(-1*self.position.y+screenSize.height+SPAWN_BOUNDS_OFFSET) || y<(-1*self.position.y-SPAWN_BOUNDS_OFFSET)))) {
         
         x = (arc4random()%((int)_background.boundingBox.size.width));
         y = (arc4random()%((int)_background.boundingBox.size.height));
