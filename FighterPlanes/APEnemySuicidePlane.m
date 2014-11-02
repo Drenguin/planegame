@@ -19,8 +19,9 @@
     
     self.scale = .25f;
     self.health = 1;
+    self.locked_on = false;
     _scoreValue = 3;
-    _speed = 2.0f;
+    _speed = 2.6f;
     _damageOnCollision = 1.0f;
     
     return self;
@@ -33,7 +34,7 @@
         float delty = self.heroSprite.position.y - self.position.y;
         float angle = atan(delty/deltx);
         double distance = sqrt(powf(deltx, 2.0f) + powf(delty, 2.0f));
-        if (distance < 250) {
+        if (distance < 110) {
             self.locked_on = true;
         }
         if (deltx < 0) {
