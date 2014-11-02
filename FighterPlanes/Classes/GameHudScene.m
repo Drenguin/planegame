@@ -14,6 +14,7 @@
 
 @implementation GameHudScene {
     GameScene *_gameScene;
+    CCLabelTTF *scoreLabel;
 }
 
 + (GameHudScene *)scene {
@@ -33,7 +34,13 @@
     _gameScene = [GameScene scene];
     _gameScene.gameHudScene = self;
     
+    CGSize screenSize = [[CCDirector sharedDirector] viewSize];
+    
+    scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Trebuchet MS" fontSize:20.0f];
+    scoreLabel.position = ccp(screenSize.width/2.0f, screenSize.height-20.0f);
+    
     [self addChild:_gameScene];
+    [self addChild:scoreLabel z:10];
     
     return self;
 }
@@ -66,6 +73,10 @@
 
 - (void)gameOver {
     NSLog(@"GAME OVER");
+}
+
+- (void)updateScoreLabel {
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", _gameScene.score]];
 }
 
 @end

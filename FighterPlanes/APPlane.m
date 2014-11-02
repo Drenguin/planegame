@@ -9,7 +9,7 @@
 #import "APPlane.h"
 
 @implementation APPlane
-@synthesize health;
+@synthesize health, scoreValue = _scoreValue;
 
 - (float)getSpeed {
     return _speed;

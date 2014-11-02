@@ -13,9 +13,13 @@
 @interface APPlane : CCSprite {
     float _speed;
     float _damageOnCollision;
+    
+    @protected
+    int _scoreValue;
 }
 
 @property (nonatomic, assign) float health;
+@property (nonatomic, readonly) int scoreValue;
 
 - (void)tick:(CCTime)delta;
 - (float)getSpeed;

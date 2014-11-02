@@ -18,6 +18,7 @@
     
     self.scale = .125f;
     self.health = 3;
+    _scoreValue = 5;
     _speed = 0.0f;
     _damageOnCollision = 1.0f;
     

@@ -14,6 +14,8 @@
     
 }
 
+
+@property (nonatomic, assign, readonly) int score;
 @property (nonatomic, retain) GameHudScene *gameHudScene;
 
 + (GameScene *)scene;

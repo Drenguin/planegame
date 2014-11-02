@@ -17,5 +17,6 @@
 - (id)init;
 
 - (void)gameOver;
+- (void)updateScoreLabel;
 
 @end

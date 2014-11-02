@@ -20,6 +20,7 @@
     NSMutableArray *_enemyPlanes;
     CCSprite *_background;
 }
+@synthesize score = _score;
 
 float rotationSpeed = 10.0f;
 
@@ -60,11 +61,22 @@ float newEnemyReloadTime;
     _planeSprite.scale = 1.0f;
     [_planeSprite.texture setAntialiased:NO];
     
+    _score = 0;
+    
+    
+    
     [self addChild:_background z:-1];
     [self addChild:_planeSprite z:1];
     
+    [self schedule:@selector(incrementScore) interval:1.0f];
+    
     // done
     return self;
+}
+
+- (void)incrementScore {
+    _score += 1;
+    [self.gameHudScene updateScoreLabel];
 }
 
 - (void)update:(CCTime)delta {
@@ -104,9 +116,10 @@ float newEnemyReloadTime;
             [self.gameHudScene gameOver];
         }
     }
-    for (CCSprite *p in enemyPlanesToRemove) {
+    for (APPlane *p in enemyPlanesToRemove) {
         [self removeChild:p];
         [_enemyPlanes removeObject:p];
+        _score += p.scoreValue;
     }
     
     NSMutableArray *weaponsToRemove = [[NSMutableArray alloc] init];
