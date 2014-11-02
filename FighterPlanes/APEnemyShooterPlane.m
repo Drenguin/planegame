@@ -32,6 +32,7 @@ float timeToWaitForReload;
 - (void)tick:(CCTime)delta {
     float deltx = self.heroSprite.position.x - self.position.x;
     float delty = self.heroSprite.position.y - self.position.y;
+    double distance = sqrt(powf(deltx, 2.0f) + powf(delty, 2.0f));
     float angle = atan(delty/deltx);
     if (deltx < 0) {
         angle = angle + M_PI;
@@ -40,7 +41,8 @@ float timeToWaitForReload;
     self.rotation = CC_RADIANS_TO_DEGREES(angle);
     
     timeToWaitForReload -= delta;
-    if (timeToWaitForReload <= 0) {
+    
+    if (timeToWaitForReload <= 0 && distance < 200) {
         APEnemyBulletWeapon *bul = [[APEnemyBulletWeapon alloc] init];
         bul.rotation = self.rotation;
         bul.position = self.position;
