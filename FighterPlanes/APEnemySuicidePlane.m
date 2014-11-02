@@ -21,7 +21,7 @@
     self.health = 1;
     self.locked_on = false;
     _scoreValue = 3;
-    _speed = 2.0f;
+    _speed = 1.5f;
     _damageOnCollision = 1.0f;
     
     self.radius = [self boundingBox].size.width/2.0f;

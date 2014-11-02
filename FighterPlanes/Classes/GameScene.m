@@ -48,6 +48,38 @@ float totalTime;
     
     _motionManager = [[CMMotionManager alloc] init];
     
+    _background = [CCSprite spriteWithImageNamed:@"california3.png"];
+    
+    _planeSprite = [[APHeroPlane alloc] init];
+    
+    
+    [self addChild:_background z:-1];
+    [self addChild:_planeSprite z:1];
+    
+    [self schedule:@selector(incrementScore) interval:1.0f];
+    
+    [self restart];
+    // done
+    return self;
+}
+
+- (void)restart {
+    if (_heroWeapons) {
+        for (CCSprite *s in _heroWeapons) {
+            [self removeChild:s];
+        }
+    }
+    if (_enemyWeapons) {
+        for (CCSprite *s in _enemyWeapons) {
+            [self removeChild:s];
+        }
+    }
+    if (_enemyPlanes) {
+        for (CCSprite *s in _enemyPlanes) {
+            [self removeChild:s];
+        }
+    }
+    
     _heroWeapons = [[NSMutableArray alloc] init];
     _enemyPlanes = [[NSMutableArray alloc] init];
     _enemyWeapons = [[NSMutableArray alloc] init];
@@ -55,7 +87,6 @@ float totalTime;
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
     // Create a colored background (Dark Grey)
-    _background = [CCSprite spriteWithImageNamed:@"california.png"];
     _background.anchorPoint = ccp(0,0);
     _background.position = ccp(0, 0);
     _background.scale = 0.5f;
@@ -63,7 +94,6 @@ float totalTime;
     newEnemyReloadTime = 1.1f;
     newEnemyTimer = newEnemyReloadTime;
     
-    _planeSprite = [[APHeroPlane alloc] init];
     _planeSprite.parentScene = self;
     _planeSprite.position = ccp(screenSize.width/2.0f, screenSize.height/2.0f);
     _planeSprite.scale = 1.0f;
@@ -72,18 +102,7 @@ float totalTime;
     _score = 0;
     
     totalTime = 0.0f;
-    
-    [self addChild:_background z:-1];
-    [self addChild:_planeSprite z:1];
-    
-    [self schedule:@selector(incrementScore) interval:1.0f];
-    
-    // done
-    return self;
-}
 
-- (void)restart {
-    [self init];
     [self.gameHudScene updateScoreLabel];
 }
 
