@@ -243,19 +243,6 @@ float totalTime;
         x = (arc4random()%((int)_background.boundingBox.size.width));
         y = (arc4random()%((int)_background.boundingBox.size.height));
     }
-//    int x = (arc4random()%((int)_background.boundingBox.size.width));
-//    int y = (arc4random()%((int)_background.boundingBox.size.height));
-//    
-//    int quadrantChoice = arc4random()%4;
-//    if (quadrantChoice == 0) {
-//        x = -1*SPAWN_BOUNDS_OFFSET;
-//    } else if (quadrantChoice == 1) {
-//        y = _background.boundingBox.size.height + SPAWN_BOUNDS_OFFSET;
-//    } else if (quadrantChoice == 2) {
-//        x = _background.boundingBox.size.width + SPAWN_BOUNDS_OFFSET;
-//    } else if (quadrantChoice == 3) {
-//        y = -1*SPAWN_BOUNDS_OFFSET;
-//    }
     
     enemyPlane.position = ccp(x,y);
     
