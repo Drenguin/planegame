@@ -22,6 +22,8 @@
     _speed = 1.0f;
     _damageOnCollision = 1.0f;
     
+    self.radius = [self boundingBox].size.width/2.0f;
+    
     return self;
 }
 

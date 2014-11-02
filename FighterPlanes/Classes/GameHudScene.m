@@ -10,11 +10,14 @@
 #import "GameScene.h"
 #import "APHeroPlane.h"
 #import "APDefinedAttributes.h"
+#import "cocos2d-ui.h"
 
 
 @implementation GameHudScene {
     GameScene *_gameScene;
     CCLabelTTF *scoreLabel;
+    CCLabelTTF *gameOverLabel;
+    CCButton *restartButton;
 }
 
 + (GameHudScene *)scene {
@@ -39,8 +42,26 @@
     scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Trebuchet MS" fontSize:20.0f];
     scoreLabel.position = ccp(screenSize.width/2.0f, screenSize.height-20.0f);
     
+    
+    // Hello world
+    gameOverLabel = [CCLabelTTF labelWithString:@"GAME OVER!" fontName:@"Chalkduster" fontSize:36.0f];
+    gameOverLabel.positionType = CCPositionTypeNormalized;
+    gameOverLabel.color = [CCColor redColor];
+    gameOverLabel.position = ccp(0.5f, 0.5f); // Middle of screen
+    
+    // Helloworld scene button
+    restartButton = [CCButton buttonWithTitle:@"[ Restart ]" fontName:@"Verdana-Bold" fontSize:18.0f];
+    restartButton.positionType = CCPositionTypeNormalized;
+    restartButton.position = ccp(0.5f, 0.35f);
+    [restartButton setTarget:self selector:@selector(restart)];
+    
     [self addChild:_gameScene];
     [self addChild:scoreLabel z:10];
+    [self addChild:restartButton z:10];
+    [self addChild:gameOverLabel z:10];
+    
+    gameOverLabel.visible = NO;
+    restartButton.visible = NO;
     
     return self;
 }
@@ -71,7 +92,17 @@
     }
 }
 
+- (void)restart {
+    [_gameScene setPaused:NO];
+    gameOverLabel.visible = NO;
+    restartButton.visible = NO;
+    [_gameScene restart];
+}
+
 - (void)gameOver {
+    [_gameScene setPaused:YES];
+    gameOverLabel.visible = YES;
+    restartButton.visible = YES;
     NSLog(@"GAME OVER");
 }
 

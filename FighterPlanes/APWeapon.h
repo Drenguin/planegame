@@ -19,6 +19,8 @@
 - (float)getSpeed;
 - (float)getReloadRate;
 
+@property (nonatomic, assign) float radius;
+
 - (void)tick:(CCTime)delta;
 
 @end

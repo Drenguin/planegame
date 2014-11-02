@@ -16,10 +16,12 @@
     self = [super initWithImageNamed:@"enemyBullet.png"];
     if (!self) return(nil);
     
-    self.scale = .1f;
+    self.scale = .2f;
     _damage = 0.5f;
-    _speed = 5.0f;
-    _reloadRate = 2.0f;
+    _speed = 4.0f;
+    _reloadRate = 3.0f;
+    
+    self.radius = 2.0f;
     
     return self;
 }

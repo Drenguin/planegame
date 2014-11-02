@@ -20,6 +20,7 @@
 
 @property (nonatomic, assign) float health;
 @property (nonatomic, readonly) int scoreValue;
+@property (nonatomic, assign) float radius;
 
 - (void)tick:(CCTime)delta;
 - (float)getSpeed;

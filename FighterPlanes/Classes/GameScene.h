@@ -24,5 +24,6 @@
 - (void)heroStartShoot:(int)weaponType;
 - (void)heroStopShoot:(int)weaponType;
 - (void)addSprite:(CCSprite *)s;
+- (void)restart;
 
 @end

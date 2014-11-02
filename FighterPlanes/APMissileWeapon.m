@@ -22,6 +22,8 @@
     _speed = 5.0f;
     _reloadRate = 3.0f;
     
+    self.radius = [self boundingBox].size.width/2.0f;
+    
     return self;
 }
 @end

@@ -27,6 +27,7 @@ NSMutableDictionary *weaponsToShoot;
     self.health = 5;
     _speed = 2.5f;
     _damageOnCollision = 1.0f;
+    self.radius = [self boundingBox].size.height/2.0f - 5.0f;
     
     machineGunTimeToWaitForReload = 0.0f;
     missileTimeToWaitForReload = 0.0f;

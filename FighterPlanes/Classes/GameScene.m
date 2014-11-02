@@ -82,6 +82,11 @@ float totalTime;
     return self;
 }
 
+- (void)restart {
+    [self init];
+    [self.gameHudScene updateScoreLabel];
+}
+
 - (void)incrementScore {
     _score += 1;
     [self.gameHudScene updateScoreLabel];
@@ -121,8 +126,12 @@ float totalTime;
             [enemyPlanesToRemove addObject:p];
         }
         
-        if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
-            //[self setPaused:YES];
+//        if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
+//            //[self setPaused:YES];
+//            [self.gameHudScene gameOver];
+//        }
+        
+        if (ccpDistance(p.position, _planeSprite.position) < (p.radius+_planeSprite.radius)) {
             [self.gameHudScene gameOver];
         }
     }
@@ -151,7 +160,7 @@ float totalTime;
     
     for (APWeapon *w in _heroWeapons) {
         for (APPlane *p in _enemyPlanes) {
-            if (w.visible && p.visible && CGRectIntersectsRect([w boundingBox], [p boundingBox])) {
+            if (w.visible && p.visible && (ccpDistance(p.position, w.position) < (p.radius+w.radius))) {
                 [heroWeaponsToRemove addObject:w];
                 w.visible = NO;
                 
@@ -179,6 +188,13 @@ float totalTime;
         [w tick:delta];
         if (!CGRectIntersectsRect([w boundingBox], CGRectInset([_background boundingBox], -2*SPAWN_BOUNDS_OFFSET, -2*SPAWN_BOUNDS_OFFSET))) {
             [enemyWeaponsToRemove addObject:w];
+        } else if (w.visible && (ccpDistance(_planeSprite.position, w.position) < (_planeSprite.radius+w.radius))) {
+            [enemyWeaponsToRemove addObject:w];
+
+            _planeSprite.health -= [w getDamage];
+            if (_planeSprite.health <= 0) {
+                [self.gameHudScene gameOver];
+            }
         }
     }
     
@@ -258,14 +274,16 @@ float totalTime;
 }
 
 - (void)addSprite:(CCSprite *)s {
+    int z = 0;
     if ([s isKindOfClass:[APEnemyBulletWeapon class]]) {
         [_enemyWeapons addObject:s];
     } else if ([s isKindOfClass:[APWeapon class]]) {
         [_heroWeapons addObject:s];
     } else if ([s isKindOfClass:[APPlane class]]) {
         [_enemyPlanes addObject:s];
+        z = 1;
     }
-    [self addChild:s];
+    [self addChild:s z:z];
 }
 
 - (void)onEnter {
