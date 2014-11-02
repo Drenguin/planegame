@@ -215,6 +215,10 @@
 		85DD2BA119E0DE2100EC9AEB /* GameHudScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */; };
 		D48031C71A05D86A004977F9 /* enemyCopter.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031C61A05D86A004977F9 /* enemyCopter.png */; };
 		D48031C91A05E08A004977F9 /* suicidePlane2.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031C81A05E08A004977F9 /* suicidePlane2.png */; };
+		D48031CB1A05E4EC004977F9 /* california2.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CA1A05E4EC004977F9 /* california2.png */; };
+		D48031CD1A05E505004977F9 /* california3.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CC1A05E505004977F9 /* california3.png */; };
+		D48031CF1A05E74F004977F9 /* explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CE1A05E74F004977F9 /* explosion.png */; };
+		D48031D21A05E809004977F9 /* APExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = D48031D11A05E809004977F9 /* APExplosion.m */; };
 		D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2C719E0A4770093A7CC /* enemyPlane.png */; };
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
@@ -649,6 +653,11 @@
 		85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDefinedAttributes.h; path = Classes/APDefinedAttributes.h; sourceTree = "<group>"; };
 		D48031C61A05D86A004977F9 /* enemyCopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyCopter.png; sourceTree = "<group>"; };
 		D48031C81A05E08A004977F9 /* suicidePlane2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suicidePlane2.png; sourceTree = "<group>"; };
+		D48031CA1A05E4EC004977F9 /* california2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = california2.png; sourceTree = "<group>"; };
+		D48031CC1A05E505004977F9 /* california3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = california3.png; sourceTree = "<group>"; };
+		D48031CE1A05E74F004977F9 /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
+		D48031D01A05E809004977F9 /* APExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APExplosion.h; sourceTree = "<group>"; };
+		D48031D11A05E809004977F9 /* APExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APExplosion.m; sourceTree = "<group>"; };
 		D4CBE2C719E0A4770093A7CC /* enemyPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyPlane.png; sourceTree = "<group>"; };
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -762,8 +771,11 @@
 				D4CBE2CF19E0BB100093A7CC /* bullet.png */,
 				D4CBE2E019E10DC80093A7CC /* enemyBullet.png */,
 				D48031C61A05D86A004977F9 /* enemyCopter.png */,
+				D48031CE1A05E74F004977F9 /* explosion.png */,
 				D4CBE2CD19E0BB070093A7CC /* missile.png */,
 				8577291E19E0A99D00D80562 /* california.png */,
+				D48031CA1A05E4EC004977F9 /* california2.png */,
+				D48031CC1A05E505004977F9 /* california3.png */,
 				D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */,
 				D4CBE2D719E0E2800093A7CC /* heroPlane2.png */,
 				85747FA819E09C7D0002C24B /* plane.png */,
@@ -1510,6 +1522,8 @@
 			isa = PBXGroup;
 			children = (
 				85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */,
+				D48031D01A05E809004977F9 /* APExplosion.h */,
+				D48031D11A05E809004977F9 /* APExplosion.m */,
 				85D488DC19E08E1E00CC3D66 /* AppDelegate.h */,
 				85D488DD19E08E1E00CC3D66 /* AppDelegate.m */,
 				85D488E219E08E1E00CC3D66 /* IntroScene.h */,
@@ -1629,6 +1643,7 @@
 				8577291F19E0A99D00D80562 /* california.png in Resources */,
 				D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */,
 				85D4868519E08E1C00CC3D66 /* Default-Landscape~ipad.png in Resources */,
+				D48031CB1A05E4EC004977F9 /* california2.png in Resources */,
 				85D4869A19E08E1C00CC3D66 /* Icon-Small.png in Resources */,
 				D48031C71A05D86A004977F9 /* enemyCopter.png in Resources */,
 				D4CBE2D419E0D5740093A7CC /* suicidePlane.png in Resources */,
@@ -1640,6 +1655,8 @@
 				85D4868C19E08E1C00CC3D66 /* Icon-72.png in Resources */,
 				85D4886819E08E1E00CC3D66 /* LICENSE_CCBReader.txt in Resources */,
 				D4CBE2DF19E0FFE80093A7CC /* obstaclePlane2.png in Resources */,
+				D48031CD1A05E505004977F9 /* california3.png in Resources */,
+				D48031CF1A05E74F004977F9 /* explosion.png in Resources */,
 				85D487D819E08E1D00CC3D66 /* LICENSE_cocos2d.txt in Resources */,
 				D4CBE2D619E0DC0B0093A7CC /* heroPlane.png in Resources */,
 				85D4868319E08E1C00CC3D66 /* Default-568h@2x.png in Resources */,
@@ -1720,6 +1737,7 @@
 				85D4882C19E08E1D00CC3D66 /* NSMutableDictionary+WeakReferences.m in Sources */,
 				85D486EA19E08E1C00CC3D66 /* CCActionManager.m in Sources */,
 				85D4874C19E08E1D00CC3D66 /* CCProgressNode.m in Sources */,
+				D48031D21A05E809004977F9 /* APExplosion.m in Sources */,
 				85D4875819E08E1D00CC3D66 /* CCResponderManager.m in Sources */,
 				85D4878A19E08E1D00CC3D66 /* CCTransition.m in Sources */,
 				85D487E119E08E1D00CC3D66 /* OALActionManager.m in Sources */,
