@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "APPlane.h"
+#import "GameScene.h"
 
 @interface APEnemyShooterPlane : APPlane {
     
 }
 
 @property (nonatomic, retain) CCSprite *heroSprite;
-
+@property (nonatomic, retain) GameScene *parentScene;
 @end
