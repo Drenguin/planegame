@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, retain) CCSprite *heroSprite;
+@property (nonatomic, assign) BOOL locked_on;
 
 - (void)tick:(CCTime)delta;
 
