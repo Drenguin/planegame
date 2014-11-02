@@ -11,6 +11,8 @@
 #import "APHeroPlane.h"
 #import "APObstaclePlane.h"
 #import "APEnemySuicidePlane.h"
+#import "APEnemyShooterPlane.h"
+#import "APEnemyBulletWeapon.h"
 
 #define SPAWN_BOUNDS_OFFSET 100
 
@@ -20,6 +22,7 @@
     APHeroPlane *_planeSprite;
     NSMutableArray *_heroWeapons;
     NSMutableArray *_enemyPlanes;
+    NSMutableArray *_enemyWeapons;
     CCSprite *_background;
 }
 @synthesize score = _score;
@@ -47,6 +50,7 @@ float totalTime;
     
     _heroWeapons = [[NSMutableArray alloc] init];
     _enemyPlanes = [[NSMutableArray alloc] init];
+    _enemyWeapons = [[NSMutableArray alloc] init];
     
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
@@ -128,27 +132,27 @@ float totalTime;
         _score += p.scoreValue;
     }
     
-    NSMutableArray *weaponsToRemove = [[NSMutableArray alloc] init];
+    NSMutableArray *heroWeaponsToRemove = [[NSMutableArray alloc] init];
     
     for (APWeapon *w in _heroWeapons) {
         [w tick:delta];
         if (!CGRectIntersectsRect([w boundingBox], CGRectInset([_background boundingBox], -2*SPAWN_BOUNDS_OFFSET, -2*SPAWN_BOUNDS_OFFSET))) {
-            [weaponsToRemove addObject:w];
+            [heroWeaponsToRemove addObject:w];
         }
     }
     
-    for (CCSprite *w in weaponsToRemove) {
+    for (CCSprite *w in heroWeaponsToRemove) {
         [self removeChild:w];
         [_heroWeapons removeObject:w];
     }
     
-    weaponsToRemove = [[NSMutableArray alloc] init];
+    heroWeaponsToRemove = [[NSMutableArray alloc] init];
     enemyPlanesToRemove = [[NSMutableArray alloc] init];
     
     for (APWeapon *w in _heroWeapons) {
         for (APPlane *p in _enemyPlanes) {
             if (w.visible && p.visible && CGRectIntersectsRect([w boundingBox], [p boundingBox])) {
-                [weaponsToRemove addObject:w];
+                [heroWeaponsToRemove addObject:w];
                 w.visible = NO;
                 
                 p.health -= [w getDamage];
@@ -164,16 +168,30 @@ float totalTime;
         [self removeChild:p];
         [_enemyPlanes removeObject:p];
     }
-    for (CCSprite *w in weaponsToRemove) {
+    for (CCSprite *w in heroWeaponsToRemove) {
         [self removeChild:w];
         [_heroWeapons removeObject:w];
+    }
+    
+    NSMutableArray *enemyWeaponsToRemove = [[NSMutableArray alloc] init];
+    
+    for (APWeapon *w in _enemyWeapons) {
+        [w tick:delta];
+        if (!CGRectIntersectsRect([w boundingBox], CGRectInset([_background boundingBox], -2*SPAWN_BOUNDS_OFFSET, -2*SPAWN_BOUNDS_OFFSET))) {
+            [enemyWeaponsToRemove addObject:w];
+        }
+    }
+    
+    for (CCSprite *w in enemyWeaponsToRemove) {
+        [self removeChild:w];
+        [_enemyWeapons removeObject:w];
     }
     
     newEnemyTimer -= delta;
     if (newEnemyTimer <= 0) {
         newEnemyTimer = newEnemyReloadTime;
         
-        if (newEnemyReloadTime > 0.5f) {
+        if (newEnemyReloadTime > 0.9f) {
             newEnemyReloadTime -= 0.01f;
         }
         
@@ -201,7 +219,7 @@ float totalTime;
     int planeType = 0;
     
     if (totalTime > 15.0f) {
-        planeType = arc4random()%2;
+        planeType = arc4random()%3;
     }
     
     if (planeType == 0) {
@@ -209,6 +227,10 @@ float totalTime;
     } else if (planeType == 1) {
         enemyPlane = [[APEnemySuicidePlane alloc] init];
         ((APEnemySuicidePlane *)enemyPlane).heroSprite = _planeSprite;
+    } else if (planeType == 2) {
+        enemyPlane = [[APEnemyShooterPlane alloc] init];
+        ((APEnemyShooterPlane *)enemyPlane).parentScene = self;
+        ((APEnemyShooterPlane *)enemyPlane).heroSprite = _planeSprite;
     }
     
     enemyPlane.rotation = (arc4random()%365);
@@ -249,7 +271,9 @@ float totalTime;
 }
 
 - (void)addSprite:(CCSprite *)s {
-    if ([s isKindOfClass:[APWeapon class]]) {
+    if ([s isKindOfClass:[APEnemyBulletWeapon class]]) {
+        [_enemyWeapons addObject:s];
+    } else if ([s isKindOfClass:[APWeapon class]]) {
         [_heroWeapons addObject:s];
     } else if ([s isKindOfClass:[APPlane class]]) {
         [_enemyPlanes addObject:s];
