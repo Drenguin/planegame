@@ -12,6 +12,8 @@
 #import "APObstaclePlane.h"
 #import "APEnemySuicidePlane.h"
 
+#define SPAWN_BOUNDS_OFFSET 100
+
 
 @implementation GameScene {
     CMMotionManager *_motionManager;
@@ -26,6 +28,8 @@ float rotationSpeed = 10.0f;
 
 float newEnemyTimer;
 float newEnemyReloadTime;
+
+float totalTime;
 
 
 + (GameScene *)scene {
@@ -52,7 +56,7 @@ float newEnemyReloadTime;
     _background.position = ccp(0, 0);
     _background.scale = 0.5f;
     
-    newEnemyReloadTime = 0.5f;
+    newEnemyReloadTime = 1.1f;
     newEnemyTimer = newEnemyReloadTime;
     
     _planeSprite = [[APHeroPlane alloc] init];
@@ -63,7 +67,7 @@ float newEnemyReloadTime;
     
     _score = 0;
     
-    
+    totalTime = 0.0f;
     
     [self addChild:_background z:-1];
     [self addChild:_planeSprite z:1];
@@ -80,6 +84,8 @@ float newEnemyReloadTime;
 }
 
 - (void)update:(CCTime)delta {
+    totalTime += delta;
+    
     CMAccelerometerData *accelerometerData = _motionManager.accelerometerData;
     CMAcceleration acceleration = accelerometerData.acceleration;
     
@@ -107,7 +113,7 @@ float newEnemyReloadTime;
     
     for (APPlane *p in _enemyPlanes) {
         [p tick:delta];
-        if (!CGRectIntersectsRect([p boundingBox], [_background boundingBox])) {
+        if (!CGRectIntersectsRect([p boundingBox], CGRectInset([_background boundingBox], -2*SPAWN_BOUNDS_OFFSET, -2*SPAWN_BOUNDS_OFFSET))) {
             [enemyPlanesToRemove addObject:p];
         }
         
@@ -126,7 +132,7 @@ float newEnemyReloadTime;
     
     for (APWeapon *w in _heroWeapons) {
         [w tick:delta];
-        if (!CGRectIntersectsRect([w boundingBox], [_background boundingBox])) {
+        if (!CGRectIntersectsRect([w boundingBox], CGRectInset([_background boundingBox], -2*SPAWN_BOUNDS_OFFSET, -2*SPAWN_BOUNDS_OFFSET))) {
             [weaponsToRemove addObject:w];
         }
     }
@@ -166,6 +172,11 @@ float newEnemyReloadTime;
     newEnemyTimer -= delta;
     if (newEnemyTimer <= 0) {
         newEnemyTimer = newEnemyReloadTime;
+        
+        if (newEnemyReloadTime > 0.5f) {
+            newEnemyReloadTime -= 0.01f;
+        }
+        
         [self createEnemy];
     }
     
@@ -187,12 +198,17 @@ float newEnemyReloadTime;
     
     APPlane *enemyPlane;
     
-    int planeType = arc4random()%2;
+    int planeType = 0;
+    
+    if (totalTime > 15.0f) {
+        planeType = arc4random()%2;
+    }
+    
     if (planeType == 0) {
+        enemyPlane = [[APObstaclePlane alloc] init];
+    } else if (planeType == 1) {
         enemyPlane = [[APEnemySuicidePlane alloc] init];
         ((APEnemySuicidePlane *)enemyPlane).heroSprite = _planeSprite;
-    } else if (planeType == 1) {
-        enemyPlane = [[APObstaclePlane alloc] init];
     }
     
     enemyPlane.rotation = (arc4random()%365);
@@ -200,11 +216,25 @@ float newEnemyReloadTime;
     float x = (arc4random()%((int)_background.boundingBox.size.width));
     float y = (arc4random()%((int)_background.boundingBox.size.height));
     
-    while (!((x>(self.position.x+screenSize.width) || x<(self.position.x)) && (y>(self.position.y+screenSize.height) || y<(self.position.y)))) {
+    while (!((x>(self.position.x+screenSize.width+SPAWN_BOUNDS_OFFSET) || x<(self.position.x-SPAWN_BOUNDS_OFFSET)) && (y>(self.position.y+screenSize.height+SPAWN_BOUNDS_OFFSET) || y<(self.position.y-SPAWN_BOUNDS_OFFSET)))) {
         
         x = (arc4random()%((int)_background.boundingBox.size.width));
         y = (arc4random()%((int)_background.boundingBox.size.height));
     }
+//    int x = (arc4random()%((int)_background.boundingBox.size.width));
+//    int y = (arc4random()%((int)_background.boundingBox.size.height));
+//    
+//    int quadrantChoice = arc4random()%4;
+//    if (quadrantChoice == 0) {
+//        x = -1*SPAWN_BOUNDS_OFFSET;
+//    } else if (quadrantChoice == 1) {
+//        y = _background.boundingBox.size.height + SPAWN_BOUNDS_OFFSET;
+//    } else if (quadrantChoice == 2) {
+//        x = _background.boundingBox.size.width + SPAWN_BOUNDS_OFFSET;
+//    } else if (quadrantChoice == 3) {
+//        y = -1*SPAWN_BOUNDS_OFFSET;
+//    }
+    
     enemyPlane.position = ccp(x,y);
     
     [self addSprite:enemyPlane];
