@@ -213,6 +213,7 @@
 		85D488E419E08E1E00CC3D66 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488E319E08E1E00CC3D66 /* IntroScene.m */; };
 		85D488EE19E092A900CC3D66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D488ED19E092A900CC3D66 /* AudioToolbox.framework */; };
 		85DD2BA119E0DE2100EC9AEB /* GameHudScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */; };
+		D48031C71A05D86A004977F9 /* enemyCopter.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031C61A05D86A004977F9 /* enemyCopter.png */; };
 		D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2C719E0A4770093A7CC /* enemyPlane.png */; };
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
@@ -645,6 +646,7 @@
 		85DD2B9F19E0DE2100EC9AEB /* GameHudScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameHudScene.h; path = Classes/GameHudScene.h; sourceTree = "<group>"; };
 		85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameHudScene.m; path = Classes/GameHudScene.m; sourceTree = "<group>"; };
 		85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDefinedAttributes.h; path = Classes/APDefinedAttributes.h; sourceTree = "<group>"; };
+		D48031C61A05D86A004977F9 /* enemyCopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyCopter.png; sourceTree = "<group>"; };
 		D4CBE2C719E0A4770093A7CC /* enemyPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyPlane.png; sourceTree = "<group>"; };
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 			children = (
 				D4CBE2CF19E0BB100093A7CC /* bullet.png */,
 				D4CBE2E019E10DC80093A7CC /* enemyBullet.png */,
+				D48031C61A05D86A004977F9 /* enemyCopter.png */,
 				D4CBE2CD19E0BB070093A7CC /* missile.png */,
 				8577291E19E0A99D00D80562 /* california.png */,
 				D4CBE2D519E0DC0B0093A7CC /* heroPlane.png */,
@@ -1624,6 +1627,7 @@
 				D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */,
 				85D4868519E08E1C00CC3D66 /* Default-Landscape~ipad.png in Resources */,
 				85D4869A19E08E1C00CC3D66 /* Icon-Small.png in Resources */,
+				D48031C71A05D86A004977F9 /* enemyCopter.png in Resources */,
 				D4CBE2D419E0D5740093A7CC /* suicidePlane.png in Resources */,
 				85D4869819E08E1C00CC3D66 /* Icon-Small-50.png in Resources */,
 				D4CBE2D819E0E2800093A7CC /* heroPlane2.png in Resources */,
