@@ -219,6 +219,7 @@
 		D48031CD1A05E505004977F9 /* california3.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CC1A05E505004977F9 /* california3.png */; };
 		D48031CF1A05E74F004977F9 /* explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CE1A05E74F004977F9 /* explosion.png */; };
 		D48031D21A05E809004977F9 /* APExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = D48031D11A05E809004977F9 /* APExplosion.m */; };
+		D4911C2A1A2294CD00AF17CF /* startBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D4911C291A2294CD00AF17CF /* startBackground.png */; };
 		D4CBE2C819E0A4770093A7CC /* enemyPlane.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2C719E0A4770093A7CC /* enemyPlane.png */; };
 		D4CBE2CE19E0BB070093A7CC /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CD19E0BB070093A7CC /* missile.png */; };
 		D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CBE2CF19E0BB100093A7CC /* bullet.png */; };
@@ -658,6 +659,7 @@
 		D48031CE1A05E74F004977F9 /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosion.png; sourceTree = "<group>"; };
 		D48031D01A05E809004977F9 /* APExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APExplosion.h; sourceTree = "<group>"; };
 		D48031D11A05E809004977F9 /* APExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APExplosion.m; sourceTree = "<group>"; };
+		D4911C291A2294CD00AF17CF /* startBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBackground.png; sourceTree = "<group>"; };
 		D4CBE2C719E0A4770093A7CC /* enemyPlane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyPlane.png; sourceTree = "<group>"; };
 		D4CBE2CD19E0BB070093A7CC /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missile.png; sourceTree = "<group>"; };
 		D4CBE2CF19E0BB100093A7CC /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 		85D4867D19E08E1C00CC3D66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4911C291A2294CD00AF17CF /* startBackground.png */,
 				D4CBE2CF19E0BB100093A7CC /* bullet.png */,
 				D4CBE2E019E10DC80093A7CC /* enemyBullet.png */,
 				D48031C61A05D86A004977F9 /* enemyCopter.png */,
@@ -1641,6 +1644,7 @@
 				85D4869619E08E1C00CC3D66 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				85747FA919E09C7D0002C24B /* plane.png in Resources */,
 				8577291F19E0A99D00D80562 /* california.png in Resources */,
+				D4911C2A1A2294CD00AF17CF /* startBackground.png in Resources */,
 				D4CBE2D019E0BB100093A7CC /* bullet.png in Resources */,
 				85D4868519E08E1C00CC3D66 /* Default-Landscape~ipad.png in Resources */,
 				D48031CB1A05E4EC004977F9 /* california2.png in Resources */,

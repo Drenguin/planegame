@@ -36,7 +36,7 @@
         float delty = self.heroSprite.position.y - self.position.y;
         float angle = atan(delty/deltx);
         double distance = sqrt(powf(deltx, 2.0f) + powf(delty, 2.0f));
-        if (distance < 110) {
+        if (distance < 90) {
             self.locked_on = true;
         }
         if (deltx < 0) {
