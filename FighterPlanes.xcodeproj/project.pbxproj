@@ -212,6 +212,8 @@
 		85D488E419E08E1E00CC3D66 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D488E319E08E1E00CC3D66 /* IntroScene.m */; };
 		85D488EE19E092A900CC3D66 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85D488ED19E092A900CC3D66 /* AudioToolbox.framework */; };
 		85DD2BA119E0DE2100EC9AEB /* GameHudScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */; };
+		D424EB6D1A22AC38004FD147 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = D424EB6C1A22AC38004FD147 /* Icon-180.png */; };
+		D424EB6F1A22AC44004FD147 /* Icon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = D424EB6E1A22AC44004FD147 /* Icon-1024.png */; };
 		D48031C71A05D86A004977F9 /* enemyCopter.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031C61A05D86A004977F9 /* enemyCopter.png */; };
 		D48031C91A05E08A004977F9 /* suicidePlane2.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031C81A05E08A004977F9 /* suicidePlane2.png */; };
 		D48031CB1A05E4EC004977F9 /* california2.png in Resources */ = {isa = PBXBuildFile; fileRef = D48031CA1A05E4EC004977F9 /* california2.png */; };
@@ -651,6 +653,8 @@
 		85DD2B9F19E0DE2100EC9AEB /* GameHudScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameHudScene.h; path = Classes/GameHudScene.h; sourceTree = "<group>"; };
 		85DD2BA019E0DE2100EC9AEB /* GameHudScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameHudScene.m; path = Classes/GameHudScene.m; sourceTree = "<group>"; };
 		85DD2BA519E0DFC000EC9AEB /* APDefinedAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDefinedAttributes.h; path = Classes/APDefinedAttributes.h; sourceTree = "<group>"; };
+		D424EB6C1A22AC38004FD147 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-180.png"; path = "Resources/Icons/Icon-180.png"; sourceTree = "<group>"; };
+		D424EB6E1A22AC44004FD147 /* Icon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-1024.png"; path = "Resources/Icons/Icon-1024.png"; sourceTree = "<group>"; };
 		D48031C61A05D86A004977F9 /* enemyCopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemyCopter.png; sourceTree = "<group>"; };
 		D48031C81A05E08A004977F9 /* suicidePlane2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = suicidePlane2.png; sourceTree = "<group>"; };
 		D48031CA1A05E4EC004977F9 /* california2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = california2.png; sourceTree = "<group>"; };
@@ -802,6 +806,8 @@
 		85D4868619E08E1C00CC3D66 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				D424EB6E1A22AC44004FD147 /* Icon-1024.png */,
+				D424EB6C1A22AC38004FD147 /* Icon-180.png */,
 				D4911C311A22A75E00AF17CF /* Icon.png */,
 				85D4868919E08E1C00CC3D66 /* Icon@2x.png */,
 				85D4868B19E08E1C00CC3D66 /* Icon-72.png */,
@@ -1673,7 +1679,9 @@
 				85D4869219E08E1C00CC3D66 /* Icon-76@2x.png in Resources */,
 				85D486A019E08E1C00CC3D66 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				85D4869019E08E1C00CC3D66 /* Icon-76.png in Resources */,
+				D424EB6D1A22AC38004FD147 /* Icon-180.png in Resources */,
 				85D486A519E08E1C00CC3D66 /* iTunesArtwork@2x in Resources */,
+				D424EB6F1A22AC44004FD147 /* Icon-1024.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
