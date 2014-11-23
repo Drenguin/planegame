@@ -160,11 +160,6 @@ float totalTime;
             [enemyPlanesToRemove addObject:p];
         }
         
-//        if (CGRectIntersectsRect([p boundingBox], [_planeSprite boundingBox])) {
-//            //[self setPaused:YES];
-//            [self.gameHudScene gameOver];
-//        }
-        
         if (ccpDistance(p.position, _planeSprite.position) < (p.radius+_planeSprite.radius)) {
             [self.gameHudScene gameOver];
         }
