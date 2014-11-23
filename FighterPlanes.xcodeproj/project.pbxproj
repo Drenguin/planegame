@@ -1605,6 +1605,7 @@
 				TargetAttributes = {
 					85D4867619E08E1C00CC3D66 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 5TC2ZV32X6;
 					};
 					85D4867A19E08E1C00CC3D66 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -1938,6 +1939,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1960,6 +1962,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FighterPlanes/Supporting Files/Prefix.pch";
