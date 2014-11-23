@@ -20,19 +20,19 @@ float shrink_lifetime_remaining;
     
     self.scale = .1f;
     grow_lifetime_remaining = 0.5f;
-    shrink_lifetime_remaining = 1.0f;
+    shrink_lifetime_remaining = 0.6f;
     
     return self;
 }
 
-- (void)tick:(CCTime)delta {
+- (void)update:(CCTime)delta {
     if (grow_lifetime_remaining > 0) {
         self.scale = .1 + (.5 - grow_lifetime_remaining);
         grow_lifetime_remaining -= delta;
     }
     else{
         if (shrink_lifetime_remaining > 0) {
-            self.scale = .6 + (1 - shrink_lifetime_remaining);
+            self.scale = .6 - (0.6 - shrink_lifetime_remaining);
             shrink_lifetime_remaining -= delta;
         }
         else {

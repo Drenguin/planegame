@@ -13,6 +13,7 @@
 #import "APEnemySuicidePlane.h"
 #import "APEnemyShooterPlane.h"
 #import "APEnemyBulletWeapon.h"
+#import "APExplosion.h"
 
 #define SPAWN_BOUNDS_OFFSET 100
 
@@ -48,7 +49,7 @@ float totalTime;
     
     _motionManager = [[CMMotionManager alloc] init];
     
-    _background = [CCSprite spriteWithImageNamed:@"california3.png"];
+    _background = [CCSprite spriteWithImageNamed:@"california2.png"];
     
     _planeSprite = [[APHeroPlane alloc] init];
     
@@ -185,16 +186,18 @@ float totalTime;
                 
                 p.health -= [w getDamage];
                 if (p.health <= 0) {
-                    [enemyPlanesToRemove addObject:p];
+                    if (![enemyPlanesToRemove containsObject:p]) {
+                        [enemyPlanesToRemove addObject:p];
+                    }
+                    
                     p.visible = NO;
                 }
             }
         }
     }
     
-    for (CCSprite *p in enemyPlanesToRemove) {
-        [self removeChild:p];
-        [_enemyPlanes removeObject:p];
+    for (APPlane *p in enemyPlanesToRemove) {
+        [self removeEnemy:p];
     }
     for (CCSprite *w in heroWeaponsToRemove) {
         [self removeChild:w];
@@ -226,7 +229,7 @@ float totalTime;
     if (newEnemyTimer <= 0) {
         newEnemyTimer = newEnemyReloadTime;
         
-        if (newEnemyReloadTime > 0.9f) {
+        if (newEnemyReloadTime > 0.6f) {
             newEnemyReloadTime -= 0.01f;
         }
         
@@ -244,6 +247,16 @@ float totalTime;
         //NSLog(@"%f, %f",s.anchorPoint.x, s.anchorPoint.y);
         //s.rotation = s.rotation + newRotOffset;
     }*/
+}
+
+- (void)removeEnemy:(APPlane *)e
+{
+    APExplosion *exp = [[APExplosion alloc] init];
+    exp.position = e.position;
+    [self addChild:exp];
+    
+    [self removeChild:e];
+    [_enemyPlanes removeObject:e];
 }
 
 - (void)createEnemy {

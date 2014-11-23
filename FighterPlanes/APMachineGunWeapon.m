@@ -21,7 +21,7 @@
     _speed = 8.0f;
     _reloadRate = .1f;
     
-    self.radius = 2.0f;
+    self.radius = 4.0f;
     
     return self;
 }

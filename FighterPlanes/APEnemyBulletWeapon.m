@@ -19,7 +19,7 @@
     self.scale = .2f;
     _damage = 0.5f;
     _speed = 4.0f;
-    _reloadRate = 3.0f;
+    _reloadRate = 4.0f;
     
     self.radius = 2.0f;
     
