@@ -9,9 +9,7 @@
 #import "APExplosion.h"
 
 
-@implementation APExplosion
-float grow_lifetime_remaining;
-float shrink_lifetime_remaining;
+@implementation APExplosion 
 
 - (id)init {
     // Apple recommend assigning self with supers return value
@@ -19,21 +17,21 @@ float shrink_lifetime_remaining;
     if (!self) return(nil);
     
     self.scale = .1f;
-    grow_lifetime_remaining = 0.5f;
-    shrink_lifetime_remaining = 0.6f;
+    self.grow_lifetime_remaining = 0.5f;
+    self.shrink_lifetime_remaining = 0.6f;
     
     return self;
 }
 
 - (void)update:(CCTime)delta {
-    if (grow_lifetime_remaining > 0) {
-        self.scale = .1 + (.5 - grow_lifetime_remaining);
-        grow_lifetime_remaining -= delta;
+    if (self.grow_lifetime_remaining > 0) {
+        self.scale = .1 + (.5 - self.grow_lifetime_remaining);
+        self.grow_lifetime_remaining -= delta;
     }
     else{
-        if (shrink_lifetime_remaining > 0) {
-            self.scale = .6 - (0.6 - shrink_lifetime_remaining);
-            shrink_lifetime_remaining -= delta;
+        if (self.shrink_lifetime_remaining > 0) {
+            self.scale = .6 - (0.6 - self.shrink_lifetime_remaining);
+            self.shrink_lifetime_remaining -= delta;
         }
         else {
             [self removeFromParent];

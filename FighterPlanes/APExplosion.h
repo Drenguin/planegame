@@ -11,10 +11,12 @@
 #import "GameScene.h"
 
 @interface APExplosion : CCSprite {
-    
 }
 
 @property (nonatomic, retain) GameScene *parentScene;
+@property (nonatomic, assign) float grow_lifetime_remaining;
+@property (nonatomic, assign) float shrink_lifetime_remaining;
+
 - (void)update:(CCTime)delta;
 
 @end

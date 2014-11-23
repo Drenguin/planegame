@@ -121,6 +121,20 @@ float totalTime;
     _planeSprite.rotation += acceleration.y*delta*rotationSpeed*60.0f;
     _planeSprite.position = ccp(_planeSprite.position.x+[_planeSprite getSpeed]*delta*60.0f*sin(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)), _planeSprite.position.y + [_planeSprite getSpeed]*delta*60.0f*cos(CC_DEGREES_TO_RADIANS(_planeSprite.rotation)));
     
+    if (_planeSprite.position.x + _planeSprite.radius > _background.boundingBox.size.width) {
+        _planeSprite.position = ccp(_background.boundingBox.size.width - _planeSprite.radius, _planeSprite.position.y);
+    } else if (_planeSprite.position.x - _planeSprite.radius < 0) {
+        _planeSprite.position = ccp(_planeSprite.radius, _planeSprite.position.y);
+    }
+    
+    if (_planeSprite.position.y + _planeSprite.radius > _background.boundingBox.size.height) {
+        _planeSprite.position = ccp(_planeSprite.position.x, _background.boundingBox.size.height - _planeSprite.radius);
+    } else if (_planeSprite.position.y - _planeSprite.radius < 0) {
+        _planeSprite.position = ccp(_planeSprite.position.x, _planeSprite.radius);
+    }
+    
+    
+    
     CGSize screenSize = [[CCDirector sharedDirector] viewSize];
     
     float x = MAX(_planeSprite.position.x, screenSize.width/2.0f);
